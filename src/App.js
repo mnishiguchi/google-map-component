@@ -1,18 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import MyMapComponent from './components/MyMapComponent';
+import 'semantic-ui-css/semantic.css';
 import './App.css';
 
-class App extends Component {
+const googleMapURL =
+  'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyA9CucPXf8WfL7K4HiMZzw5D8mXwrnX2XI';
+
+class App extends React.Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Google Maps Experiments</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <MyMapComponent
+          isMarkerShown
+          googleMapURL={googleMapURL}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `80vh` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
       </div>
     );
   }
