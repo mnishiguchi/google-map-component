@@ -1,0 +1,17 @@
+.Layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.Layout__row {
+  flex: 1;
+}
+
+.Header {
+  height: 60px;
+  line-height: 60px;
+}
+
+.Footer {
+  padding: 1.5rem 0;
+}

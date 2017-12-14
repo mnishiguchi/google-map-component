@@ -1,0 +1,13 @@
+.mapListContainer {
+  display: flex;
+}
+
+.mapColumn {
+  flex: 1;
+}
+
+.searchListColumn {
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+}

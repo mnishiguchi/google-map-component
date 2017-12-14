@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import SearchListApp from './SearchListApp';
 import registerServiceWorker from './registerServiceWorker';
+import 'font-awesome/css/font-awesome.min.css';
+import 'bulma/css/bulma.css';
+import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<SearchListApp />, document.getElementById('root'));
 registerServiceWorker();
