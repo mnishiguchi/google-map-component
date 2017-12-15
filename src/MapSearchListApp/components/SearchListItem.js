@@ -1,12 +1,6 @@
 import React from 'react';
+import { priceSymbolConverter } from '../utils';
 import './SearchListItem.css';
-
-const priceSymbolConverter = {
-  1: '$',
-  2: '$$',
-  3: '$$$',
-  4: '$$$$'
-};
 
 const SearchListItem = ({
   yelpUid,

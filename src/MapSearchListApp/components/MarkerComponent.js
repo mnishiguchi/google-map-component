@@ -1,6 +1,7 @@
 import React from 'react';
 import { Marker, InfoWindow } from 'react-google-maps';
 import { compose, withStateHandlers, withHandlers } from 'recompose';
+import { priceSymbolConverter } from '../utils';
 
 // Store pairs of yelpUid to marker object.
 const yelpUidMarkerMap = {};
@@ -56,6 +57,25 @@ const MarkerComponent = compose(
         <React.Fragment>
           <h4>{props.name}</h4>
           <p>{props.displayAddress}</p>
+          <nav className="level is-mobile">
+            <div className="level-left">
+              <a className="level-item">
+                <span className="icon is-small">
+                  <i className="fa fa-heart" />
+                </span>
+              </a>
+              <a className="level-item">
+                <span className="tag is-info">
+                  Rating: {props.rating} / 5.0
+                </span>
+              </a>
+              <a className="level-item">
+                <span className="tag is-info">
+                  {priceSymbolConverter[props.price]}
+                </span>
+              </a>
+            </div>
+          </nav>
         </React.Fragment>
       </InfoWindow>
     )}
