@@ -8,9 +8,11 @@
   "dependencies": {
     "bulma": "^0.6.1",
     "font-awesome": "^4.7.0",
+    "lodash": "^4.17.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-google-maps": "^9.4.3",
+    "react-icons": "^2.2.7",
     "recompose": "^0.26.0"
   },
   "scripts": {

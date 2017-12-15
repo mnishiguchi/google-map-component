@@ -39,7 +39,7 @@ const SearchListItem = ({
               </span>
             </a>
             <a className="level-item">
-              <span className="tag is-info">Rating: {rating} / 5</span>
+              <span className="tag is-info">Rating: {rating} / 5.0</span>
             </a>
             <a className="level-item">
               <span className="tag is-info">{priceSymbolConverter[price]}</span>

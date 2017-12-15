@@ -1,11 +1,8 @@
 import React from 'react';
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from 'react-google-maps';
+import FaAnchor from 'react-icons/lib/fa/anchor';
+import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
 import { compose, withProps } from 'recompose';
+import MarkerComponent from './MarkerComponent';
 
 const googleMapURL =
   'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyA9CucPXf8WfL7K4HiMZzw5D8mXwrnX2XI';
@@ -25,7 +22,20 @@ const MapComponent = compose(
   withGoogleMap
 )(props => (
   <GoogleMap defaultZoom={defaultZoom} defaultCenter={defaultCenter}>
-    {props.isMarkerShown && props.children}
+    {props.isMarkerShown && (
+      <React.Fragment>
+        {props.dataArray.map(place => (
+          <MarkerComponent
+            key={place.yelpUid}
+            position={{
+              lat: Number(place.latitude),
+              lng: Number(place.longitude)
+            }}
+            {...place}
+          />
+        ))}
+      </React.Fragment>
+    )}
   </GoogleMap>
 ));
 
