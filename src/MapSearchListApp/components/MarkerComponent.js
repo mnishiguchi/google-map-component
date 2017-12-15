@@ -53,7 +53,7 @@ const MarkerComponent = compose(
     icon={defaultMarkerIcon}
   >
     {props.isInfoWindowOpen && (
-      <InfoWindow>
+      <InfoWindow defaultOptions={{ disableAutoPan: true }}>
         <React.Fragment>
           <h4>{props.name}</h4>
           <p>{props.displayAddress}</p>
