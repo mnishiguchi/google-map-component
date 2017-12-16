@@ -14,4 +14,5 @@ ReactDOM.render(
   <MapSearchListApp dataArray={dataArray} />,
   document.getElementById('root')
 );
+
 registerServiceWorker();
