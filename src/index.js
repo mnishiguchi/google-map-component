@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'lodash';
+
+// react router v4
 import { HashRouter, Switch, Route } from 'react-router-dom';
 
 // Service worker
@@ -17,7 +19,6 @@ import MapSearchListScreen from './screens/MapSearchListScreen';
 import AboutScreen from './screens/AboutScreen';
 import NoMatchScreen from './screens/NoMatchScreen';
 
-// Data
 // Pick random 20 items out of 3000+.
 const dataArray = _.shuffle(window.App.data).slice(0, 20);
 

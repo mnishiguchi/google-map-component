@@ -3,18 +3,28 @@ import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header
-    className="navbar"
+    className="level"
     role="navigation"
     aria-label="main navigation"
     style={{
-      height: '60px',
-      lineHeight: '60px'
+      padding: '.5rem'
     }}
   >
-    <div className="container">
-      <h1>Google Maps Experiments</h1>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
+    <div className="level-left">
+      <div className="level-item">
+        <p className="subtitle is-5">
+          <Link to="/">Google Maps Experiments</Link>
+        </p>
+      </div>
+    </div>
+
+    <div className="level-right">
+      <p className="level-item">
+        <Link to="/">Home</Link>
+      </p>
+      <p className="level-item">
+        <Link to="/about">About</Link>
+      </p>
     </div>
   </header>
 );
