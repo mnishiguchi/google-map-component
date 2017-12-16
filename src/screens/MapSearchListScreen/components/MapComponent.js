@@ -1,5 +1,4 @@
 import React from 'react';
-import FaAnchor from 'react-icons/lib/fa/anchor';
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
 import { compose, withProps } from 'recompose';
 import MarkerComponent from './MarkerComponent';
