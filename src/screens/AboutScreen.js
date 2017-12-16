@@ -5,6 +5,12 @@ class AboutScreen extends React.Component {
     return (
       <div className="container">
         <h1 className="title is-2">About</h1>
+
+        <p>
+          Hi, I am <a href="https://mnishiguchi.com">Masatoshi</a>. I create
+          this app for me to do some experiments on Google Maps API in React.
+        </p>
+
         <p>
           Ipsum nam non export admodum, nisi transferrem cupidatat illum
           voluptate. Te fore voluptate praetermissum, senserit non illum iudicem

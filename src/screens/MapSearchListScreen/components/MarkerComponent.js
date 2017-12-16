@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Marker, InfoWindow } from 'react-google-maps';
 import { compose, withStateHandlers, withHandlers } from 'recompose';
 import { priceSymbolConverter } from '../utils';
+import { selectSearchListItem } from '../../../actions';
 
 // Store pairs of yelpUid to marker object.
 const yelpUidMarkerMap = {};
@@ -20,6 +22,7 @@ const setMarkerIcon = (yelpUid, iconUrl) => {
 const MarkerComponent = compose(
   withStateHandlers(
     () => ({
+      // Local state
       isInfoWindowOpen: false
     }),
     {
@@ -40,46 +43,71 @@ const MarkerComponent = compose(
       props.openInfoWindow(event);
     },
     onMouseOut: props => event => {
-      setMarkerIcon(props.yelpUid, defaultMarkerIcon);
+      const isSelected = props.yelpUid === props.selectedItemId;
+
+      // Prevent the icon from getting back to default for selected item.
+      !isSelected && setMarkerIcon(props.yelpUid, defaultMarkerIcon);
       props.closeInfoWindow(event);
+    },
+    onClick: props => event => {
+      // Pin the InfoWindow.
+      props.dispatch(selectSearchListItem(props.yelpUid));
+    },
+    onCloseInfoWindow: props => event => {
+      setMarkerIcon(props.yelpUid, defaultMarkerIcon);
+      props.dispatch(selectSearchListItem(null));
     }
   })
-)(props => (
-  <Marker
-    ref={object => (yelpUidMarkerMap[props.yelpUid] = object)}
-    position={props.position}
-    onMouseOver={props.onMouseOver}
-    onMouseOut={props.onMouseOut}
-    icon={defaultMarkerIcon}
-  >
-    {props.isInfoWindowOpen && (
-      <InfoWindow defaultOptions={{ disableAutoPan: true }}>
-        <React.Fragment>
-          <h4>{props.name}</h4>
-          <p>{props.displayAddress}</p>
-          <nav className="level is-mobile">
-            <div className="level-left">
-              <a className="level-item">
-                <span className="icon is-small">
-                  <i className="fa fa-heart" />
-                </span>
-              </a>
-              <a className="level-item">
-                <span className="tag is-info">
-                  Rating: {props.rating} / 5.0
-                </span>
-              </a>
-              <a className="level-item">
-                <span className="tag is-info">
-                  {priceSymbolConverter[props.price]}
-                </span>
-              </a>
-            </div>
-          </nav>
-        </React.Fragment>
-      </InfoWindow>
-    )}
-  </Marker>
-));
+)(props => {
+  const isSelected = props.yelpUid === props.selectedItemId;
 
-export default MarkerComponent;
+  return (
+    <Marker
+      ref={object => (yelpUidMarkerMap[props.yelpUid] = object)}
+      position={props.position}
+      onMouseOver={props.onMouseOver}
+      onMouseOut={props.onMouseOut}
+      onClick={props.onClick}
+      icon={isSelected ? hoverMarkerIcon : defaultMarkerIcon}
+    >
+      {(props.isInfoWindowOpen || isSelected) && (
+        <InfoWindow
+          defaultOptions={{ disableAutoPan: true }}
+          onCloseClick={props.onCloseInfoWindow}
+        >
+          <React.Fragment>
+            <h4>{props.name}</h4>
+            <p>{props.displayAddress}</p>
+            <nav className="level is-mobile">
+              <div className="level-left">
+                <a className="level-item">
+                  <span className="icon is-small">
+                    <i className="fa fa-heart" />
+                  </span>
+                </a>
+                <a className="level-item">
+                  <span className="tag is-info">
+                    Rating: {props.rating} / 5.0
+                  </span>
+                </a>
+                <a className="level-item">
+                  <span className="tag is-info">
+                    {priceSymbolConverter[props.price]}
+                  </span>
+                </a>
+              </div>
+            </nav>
+          </React.Fragment>
+        </InfoWindow>
+      )}
+    </Marker>
+  );
+});
+
+const mapStateToProps = state => {
+  return {
+    selectedItemId: state.map.selectedItemId
+  };
+};
+
+export default connect(mapStateToProps)(MarkerComponent);
