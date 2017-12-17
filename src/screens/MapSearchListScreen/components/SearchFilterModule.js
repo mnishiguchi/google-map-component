@@ -1,11 +1,17 @@
 import React from 'react';
 
 const SearchFilterModule = () => (
-  <div className="tabs">
+  <div className="tabs" style={{ marginBottom: '1px' }}>
     <ul>
-      <li className="is-active"><a>Newest</a></li>
-      <li><a>Cheapest</a></li>
-      <li><a>More</a></li>
+      <li className="is-active">
+        <a>Newest</a>
+      </li>
+      <li>
+        <a>Cheapest</a>
+      </li>
+      <li>
+        <a>More</a>
+      </li>
     </ul>
   </div>
 );

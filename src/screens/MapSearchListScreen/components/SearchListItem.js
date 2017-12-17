@@ -22,8 +22,9 @@ const SearchListItem = ({
       style={Object.assign(
         {
           overflow: 'hidden',
-          maxHeight: '120px',
-          borderRadius: '0'
+          height: '80px',
+          borderRadius: '0',
+          padding: 0
         },
         {
           background: isSelected && '#d6dfea'
@@ -33,10 +34,10 @@ const SearchListItem = ({
       onMouseOut={() => dispatch(selectSearchListItem(null))}
     >
       <article className="media">
-        <div className="media-left">
+        <div className="media-left" style={{ backgroundColor: '#ddd' }}>
           <figure
             className="image is-96x96"
-            style={{ background: `no-repeat center/100% url(${imageUrl})` }}
+            style={{ background: `no-repeat center/120% url(${imageUrl})` }}
           />
         </div>
         <div className="media-content">
