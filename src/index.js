@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import _ from 'lodash';
 
 // react router v4
 import { HashRouter, Switch, Route } from 'react-router-dom';
@@ -25,8 +24,12 @@ import MapSearchListScreen from './screens/MapSearchListScreen';
 import AboutScreen from './screens/AboutScreen';
 import NoMatchScreen from './screens/NoMatchScreen';
 
-// TODO: Replace this with fetching data from remote API.
-const dataArray = _.shuffle(window.App.data).slice(0, 20);
+// Data
+import usStates from './data/usStates';
+
+// Load global data.
+window.App = window.App || {};
+window.App.usStates = usStates;
 
 // Root with router
 const Root = () => (
@@ -34,11 +37,7 @@ const Root = () => (
     <HashRouter>
       <Layout>
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => <MapSearchListScreen dataArray={dataArray} />}
-          />
+          <Route exact path="/" component={MapSearchListScreen} />
           <Route path="/about" component={AboutScreen} />
           <Route component={NoMatchScreen} />
         </Switch>

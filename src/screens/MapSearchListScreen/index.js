@@ -1,9 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import MapComponent from './components/MapComponent';
 import SearchFilterModule from './components/SearchFilterModule';
 import SearchList from './components/SearchList';
+import { fetchPropertyList } from '../../actions';
 
 class MapSearchListScreen extends React.PureComponent {
+  componentDidMount() {
+    // Set dataArray if not already.
+    if (this.props.dataArray.length < 1) {
+      this.props.dispatch(fetchPropertyList());
+    }
+  }
+
   render() {
     const { dataArray } = this.props;
 
@@ -26,4 +35,10 @@ class MapSearchListScreen extends React.PureComponent {
   }
 }
 
-export default MapSearchListScreen;
+const mapStateToProps = state => {
+  return {
+    dataArray: state.property.list || []
+  };
+};
+
+export default connect(mapStateToProps)(MapSearchListScreen);

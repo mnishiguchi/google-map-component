@@ -9,7 +9,10 @@ const logger = createLogger({
   collapsed: true
 });
 
+const initialState = {};
+
 export default createStore(
   reducers,
+  initialState,
   applyMiddleware(thunk, logger, routerMiddleware(createHistory()))
 );
