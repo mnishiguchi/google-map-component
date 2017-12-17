@@ -1,10 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { AutoSizer, List } from 'react-virtualized';
 import SearchListItem from './SearchListItem';
 
+const findScrollToIndex = (dataArray, selectedItemId) => {
+  return dataArray.findIndex(
+    dataEntry => (dataEntry && dataEntry.yelpUid) === selectedItemId
+  );
+};
+
 class SearchList extends React.PureComponent {
   render = () => {
-    const { dataArray } = this.props;
+    const { dataArray, selectedItemId } = this.props;
 
     return (
       <AutoSizer>
@@ -21,7 +28,7 @@ class SearchList extends React.PureComponent {
               </div>
             )}
             noRowsRenderer={() => <div>No places</div>}
-            scrollToIndex={this.scrollToIndex}
+            scrollToIndex={findScrollToIndex(dataArray, selectedItemId)}
           />
         )}
       </AutoSizer>
@@ -29,4 +36,10 @@ class SearchList extends React.PureComponent {
   };
 }
 
-export default SearchList;
+const mapStateToProps = state => {
+  return {
+    selectedItemId: state.map.selectedItemId
+  };
+};
+
+export default connect(mapStateToProps)(SearchList);
