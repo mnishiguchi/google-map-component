@@ -3,13 +3,18 @@ import { connect } from 'react-redux';
 import MapComponent from './components/MapComponent';
 import SearchFilterModule from './components/SearchFilterModule';
 import SearchList from './components/SearchList';
-import { fetchPropertyList } from '../../actions';
+import { fetchPropertyList, fetchDirection } from '../../actions';
 
 class MapSearchListScreen extends React.PureComponent {
   componentDidMount() {
     // Set dataArray if not already.
     if (this.props.dataArray.length < 1) {
       this.props.dispatch(fetchPropertyList());
+    }
+
+    // TODO: Create a direction form component and move code there.
+    if (!this.props.direction) {
+      this.props.dispatch(fetchDirection());
     }
   }
 

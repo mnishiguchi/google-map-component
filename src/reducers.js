@@ -1,14 +1,26 @@
 import { combineReducers } from 'redux';
 // react-router-redux 5.x for use with react-router 4.x
 import { routerReducer } from 'react-router-redux';
-import { SELECT_SEARCH_LIST_ITEM, SET_PROPERTY_LIST } from './constants';
+import {
+  SELECT_SEARCH_LIST_ITEM,
+  SET_PROPERTY_LIST,
+  SET_DIRECTION
+} from './constants';
 
-const mapReducer = (state = { selectedItemId: null }, action) => {
+const mapReducer = (
+  state = { selectedItemId: null, direction: null },
+  action
+) => {
   switch (action.type) {
     case SELECT_SEARCH_LIST_ITEM:
       return {
         ...state,
         selectedItemId: action.payload.id
+      };
+    case SET_DIRECTION:
+      return {
+        ...state,
+        direction: action.payload.direction
       };
     default:
       return state;
