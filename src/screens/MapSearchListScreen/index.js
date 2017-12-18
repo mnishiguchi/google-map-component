@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import MapComponent from './components/MapComponent';
-import SearchFilterModule from './components/SearchFilterModule';
 import SearchList from './components/SearchList';
+import DirectionsComponent from './components/DirectionsComponent';
 import { fetchPropertyList, fetchDirection } from '../../actions';
 
 class MapSearchListScreen extends React.PureComponent {
@@ -28,22 +29,34 @@ class MapSearchListScreen extends React.PureComponent {
           <MapComponent isMarkerShown dataArray={dataArray} />
         </div>
 
-        <div style={{ width: '400px', overflowY: 'hidden' }}>
-          <SearchFilterModule />
+        <div style={{ width: '400px', height: '90vh', overflowY: 'hidden' }}>
+          <Tabs>
+            <TabList className="tabs" style={{ marginBottom: '1px', borderBottom: '1px solid #ccc' }}>
+              <Tab>
+                <a>List</a>
+              </Tab>
+              <Tab>
+                <a>Directions</a>
+              </Tab>
+            </TabList>
+            <TabPanel>
+              <div style={{ height: '90vh' }}>
+                <SearchList dataArray={dataArray} />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <DirectionsComponent />
+            </TabPanel>
+          </Tabs>
 
-          <div style={{ height: '90vh' }}>
-            <SearchList dataArray={dataArray} />
-          </div>
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    dataArray: state.property.list || []
-  };
-};
+const mapStateToProps = state => ({
+  dataArray: state.property.list || [],
+});
 
 export default connect(mapStateToProps)(MapSearchListScreen);
