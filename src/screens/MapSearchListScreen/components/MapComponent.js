@@ -13,8 +13,11 @@ import decodeCoordinates from '../../../utils/decodeCoordinates';
 
 const googleMapURL =
   'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyA9CucPXf8WfL7K4HiMZzw5D8mXwrnX2XI';
-const defaultCenter = { lat: 38.8977, lng: -77.0365 };
-const defaultZoom = 7;
+
+const defaultMapProps = {
+  defaultCenter: { lat: 38.8977, lng: -77.0365 },
+  defaultZoom: 7
+};
 
 // Configure the map here.
 // https://tomchentw.github.io/react-google-maps/
@@ -28,23 +31,22 @@ const MapComponent = compose(
   withScriptjs,
   withGoogleMap
 )(props => {
-  const encryptedCoordinates = props.direction
+  const encodedCoordinates = props.direction
     ? props.direction.routes[0].overview_polyline.points
     : '';
-  const points = decodeCoordinates(encryptedCoordinates);
+  const polylinePath = decodeCoordinates(encodedCoordinates);
 
-  console.log('points', points);
   return (
-    <GoogleMap defaultZoom={defaultZoom} defaultCenter={defaultCenter}>
+    <GoogleMap {...defaultMapProps}>
       {props.isMarkerShown && (
         <React.Fragment>
           <UsStatePolygonComponent usStateName={'district of columbia'} />
           <UsStatePolygonComponent usStateName={'maryland'} />
           <UsStatePolygonComponent usStateName={'virginia'} />
 
-          {points && (
+          {polylinePath && (
             <Polyline
-              path={points}
+              path={polylinePath}
               options={{
                 path: {},
                 geodesic: true,

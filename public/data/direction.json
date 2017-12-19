@@ -1,482 +1,258 @@
 {
-  "geocoded_waypoints": [
-    {
-      "geocoder_status": "OK",
-      "place_id": "ChIJr7hB18W3t4kRspFfAnk-vS4",
-      "types": ["neighborhood", "political"]
-    },
-    {
-      "geocoder_status": "OK",
-      "place_id": "ChIJ8ZK7RqcEyIkRDk0BX-sqbgE",
-      "types": ["establishment", "hospital", "point_of_interest"]
-    }
-  ],
-  "routes": [
-    {
-      "bounds": {
-        "northeast": {
-          "lat": 39.2903511,
-          "lng": -76.62207719999999
-        },
-        "southwest": {
-          "lat": 38.908565,
-          "lng": -77.04493909999999
-        }
+   "geocoded_waypoints" : [
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJt4P01q4DyIkRWOcjQqiWSAQ",
+         "types" : [ "locality", "political" ]
       },
-      "copyrights": "Map data ©2017 Google",
-      "legs": [
-        {
-          "distance": {
-            "text": "38.9 mi",
-            "value": 62550
-          },
-          "duration": {
-            "text": "1 hour 5 mins",
-            "value": 3900
-          },
-          "end_address": "10 N Greene St, Baltimore, MD 21201, USA",
-          "end_location": {
-            "lat": 39.2894133,
-            "lng": -76.6239241
-          },
-          "start_address": "Dupont Circle, Washington, DC, USA",
-          "start_location": {
-            "lat": 38.9096673,
-            "lng": -77.043414
-          },
-          "steps": [
-            {
-              "distance": {
-                "text": "0.2 mi",
-                "value": 327
-              },
-              "duration": {
-                "text": "1 min",
-                "value": 40
-              },
-              "end_location": {
-                "lat": 38.9123586,
-                "lng": -77.04493909999999
-              },
-              "html_instructions":
-                "Head <b>northwest</b> on <b>Connecticut Ave NW</b> toward <b>20th St NW</b>",
-              "polyline": {
-                "points": "mpnlFhpfuMQJ{@`@OHOFMHOFaChAm@XkDbB[JUJ"
-              },
-              "start_location": {
-                "lat": 38.9096673,
-                "lng": -77.043414
-              },
-              "travel_mode": "DRIVING"
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJ7cmZVwkRsYkRxTxC4m0-2L8",
+         "types" : [ "locality", "political" ]
+      }
+   ],
+   "routes" : [
+      {
+         "bounds" : {
+            "northeast" : {
+               "lat" : 39.270958,
+               "lng" : -76.62723
             },
-            {
-              "distance": {
-                "text": "0.1 mi",
-                "value": 193
-              },
-              "duration": {
-                "text": "1 min",
-                "value": 62
-              },
-              "end_location": {
-                "lat": 38.9140869,
-                "lng": -77.0448753
-              },
-              "html_instructions": "Turn <b>right</b> onto <b>20th St NW</b>",
-              "maneuver": "turn-right",
-              "polyline": {
-                "points": "gaolFzyfuMSKEAI?KAiA@_F@"
-              },
-              "start_location": {
-                "lat": 38.9123586,
-                "lng": -77.04493909999999
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "1.1 mi",
-                "value": 1808
-              },
-              "duration": {
-                "text": "9 mins",
-                "value": 530
-              },
-              "end_location": {
-                "lat": 38.9140932,
-                "lng": -77.02397590000001
-              },
-              "html_instructions": "Turn <b>right</b> onto <b>S St NW</b>",
-              "maneuver": "turn-right",
-              "polyline": {
-                "points":
-                  "alolFnyfuM?_B?}A?aB?eE?qA?mA?U?qB?kA?qA@sD?M?gAAo@?Y?qAAsD?gB?[?eA?eD?_C?]?Y?eF@sBAS@s@?iA?kF?eF?W?yB?aD?U?wD?yDAY@iH?gB"
-              },
-              "start_location": {
-                "lat": 38.9140869,
-                "lng": -77.0448753
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "0.2 mi",
-                "value": 270
-              },
-              "duration": {
-                "text": "1 min",
-                "value": 53
-              },
-              "end_location": {
-                "lat": 38.9116693,
-                "lng": -77.0239593
-              },
-              "html_instructions": "Turn <b>right</b> onto <b>9th St NW</b>",
-              "maneuver": "turn-right",
-              "polyline": {
-                "points": "alolFzvbuMtCAL@vA?l@?xDC"
-              },
-              "start_location": {
-                "lat": 38.9140932,
-                "lng": -77.02397590000001
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "0.4 mi",
-                "value": 700
-              },
-              "duration": {
-                "text": "2 mins",
-                "value": 120
-              },
-              "end_location": {
-                "lat": 38.9140752,
-                "lng": -77.01673339999999
-              },
-              "html_instructions":
-                "Turn <b>left</b> onto <b>Rhode Island Ave NW</b>",
-              "maneuver": "turn-left",
-              "polyline": {
-                "points":
-                  "}|nlFvvbuMVBKe@Om@i@wBGW}@uDcAcEI_@AEK[IWk@{BMg@Ic@i@uBa@}AESU{@Sw@Me@Qs@Kc@[oA"
-              },
-              "start_location": {
-                "lat": 38.9116693,
-                "lng": -77.0239593
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "0.6 mi",
-                "value": 1014
-              },
-              "duration": {
-                "text": "3 mins",
-                "value": 197
-              },
-              "end_location": {
-                "lat": 38.90969210000001,
-                "lng": -77.00646089999999
-              },
-              "html_instructions":
-                "Turn <b>right</b> onto <b>Florida Ave NW</b>",
-              "maneuver": "turn-right",
-              "polyline": {
-                "points":
-                  "_lolFpiauM`@kAHUFUVw@L]h@aBFQn@qB\\gAJYJ_@ZaADKRo@Z}@h@aBZ_A~@uChB{FXy@DOv@cCHWL_@rAeEbBiFLa@BG"
-              },
-              "start_location": {
-                "lat": 38.9140752,
-                "lng": -77.01673339999999
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "492 ft",
-                "value": 150
-              },
-              "duration": {
-                "text": "1 min",
-                "value": 87
-              },
-              "end_location": {
-                "lat": 38.9085713,
-                "lng": -77.0058963
-              },
-              "html_instructions":
-                "<b>Florida Ave NW</b> turns <b>right</b> and becomes <b>First St NE</b>",
-              "polyline": {
-                "points": "qpnlFji_uM^{@HYBE@EBABCDADC\\EPDT?^?t@A"
-              },
-              "start_location": {
-                "lat": 38.90969210000001,
-                "lng": -77.00646089999999
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "3.8 mi",
-                "value": 6114
-              },
-              "duration": {
-                "text": "9 mins",
-                "value": 526
-              },
-              "end_location": {
-                "lat": 38.9185504,
-                "lng": -76.93857989999999
-              },
-              "html_instructions":
-                "Sharp <b>left</b> onto <b>US-50 E</b>/<b>New York Ave NE</b><div style=\"font-size:0.9em\">Entering Maryland</div>",
-              "maneuver": "turn-sharp-left",
-              "polyline": {
-                "points":
-                  "qinlFze_uM?g@@{@}@sDOk@oAaFcAeEMe@Mg@YkA_BuGYg@s@wCo@oCKe@Qu@i@uB[qA]uAmB{HWcAa@cBi@sB?AAC?A?AAAACAGCIAEAGCGEQCMOy@EYCOm@eCk@aCMc@_A{Dw@aDGYu@_D[yA{DyO}AkGo@kCESi@mBGYYiAESWiAc@aBCOE]Gk@Ci@A[AQAo@Aw@?u@Aw@AuA?Q?mA?iACgB?iECkDCwB@eA@cB?C@y@AiECi@CyEEwBEaD?a@?e@@UFqGPaIRoHJyDJ_FDgBF}FFkEBsABo@?yA?qAAw@IeAG]I]G[]aA[_Ai@yAUk@]{@i@wAe@mAISCGCEAEM]Q_@Oa@m@eB[eAUiAKq@IkAI{ACu@?_BBaABk@@SFy@b@eEbA{Kf@_Gl@}GL_BFgB@gA@qC?g@?a@EiAA[Co@E{@Eo@SiBUuBQ}A[eC"
-              },
-              "start_location": {
-                "lat": 38.9085713,
-                "lng": -77.0058963
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "0.5 mi",
-                "value": 882
-              },
-              "duration": {
-                "text": "1 min",
-                "value": 35
-              },
-              "end_location": {
-                "lat": 38.9233845,
-                "lng": -76.93080519999999
-              },
-              "html_instructions":
-                "Take the <b>Balt-Wash Pkwy</b> ramp on the <b>left</b> to <b>Baltimore</b>",
-              "polyline": {
-                "points":
-                  "}gplFbartMIWCMGYg@cDWsAUeAYkA]gAe@sAMa@o@yAYk@[o@i@}@q@gAeAyAUW_@a@q@w@cEeEoAoAw@u@_@]GGCCCEAE"
-              },
-              "start_location": {
-                "lat": 38.9185504,
-                "lng": -76.93857989999999
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "18.3 mi",
-                "value": 29389
-              },
-              "duration": {
-                "text": "19 mins",
-                "value": 1138
-              },
-              "end_location": {
-                "lat": 39.1403167,
-                "lng": -76.7553332
-              },
-              "html_instructions":
-                "Merge onto <b>Baltimore-Washington Pkwy</b>",
-              "maneuver": "merge",
-              "polyline": {
-                "points":
-                  "cfqlFppptMwBcBcAw@_@WSMSOu@e@cC_BoAy@wBsASMUOWO{AcAiCeB{B{AiAu@{AgAk@e@YW][YYi@i@Y]OS_@e@U]]g@k@{@c@y@m@mAg@kAYs@k@_Be@_BeAwDOm@y@sCq@sBOa@Qc@Yu@_@w@c@}@Q]KOoB{CgAwAAAQUAAAA}AsA}AmAmAw@}BcAsFaCc@ScBeAAAOKCAAAYUo@g@}@s@s@q@]a@a@c@c@g@a@c@eAiASS]c@_AeAk@m@UWgAcAaBuA]UWSm@a@MIWM[QUMYMYKi@Sq@Uc@O_@K]Ie@M]G]Gw@Mc@Ek@Gg@Ce@C_@Ck@AW?U?[?g@@y@Bs@BaABaADW@U@S?W@sAD{@@o@@s@Au@Aa@Cg@Ca@Ce@Eu@Kg@G_AQy@S[GOESGWIMEWK_@MWKYKi@UYOe@We@UYQ_Am@s@g@y@i@_@W[Uo@c@uAcAiAu@w@g@k@]_@SSIQI[M}As@aB]i@Oq@Mu@MsAOQAaAEo@CwAEkAGA?oBGi@Ea@Cs@Ei@Gk@Ge@Ii@MqAYyBq@wAg@gAa@k@SOGs@_@QI_@SWO]Ue@[e@[}@o@WQc@Ye@_@aBkAyAcAwA}@g@[}@g@o@_@oAo@gB{@g@UmGiCWMe@Sg@WSKg@YWOc@WgAu@QMy@k@e@]QMu@m@u@s@u@u@{B}Bg@g@]_@]]wAwAc@_@e@a@c@_@kA}@w@i@a@[{@g@UMeAk@cBy@m@Wm@UiA_@a@OoA_@kHkBoA[gEgAuA_@kBm@eBk@iBo@}@]}@_@{@]y@_@kAk@YQo@a@s@_@SM{@i@sA}@e@[yAcA{@u@qBgBmAoA_CiCcBoBKO]c@?AIK]e@wCcEU]MSg@u@w@sAm@cAo@mAc@_Ag@kAMYmBkFGUAA?CEKEOCKAACISw@o@kCuA_HeDyQm@kDIa@iAiFw@eCaA_DACu@wBi@wAy@sBo@wAqAqCwAmCu@kAi@y@[_@_B{Bo@w@gCkCeB{Ac@[a@[q@c@eAm@aAk@KGOIc@SoAm@_@KUG}@_@cAa@kBq@a@OKCGCCAQG_A[yAa@qDaAa@MaFcAeCi@yCq@gDq@mCm@_Ce@gCi@}@Q{GyA_GmA{FuAyCw@qCw@cAWmA]AAA?A?sAa@sFcBgA_@qBq@uAc@cBo@gHaCeBo@aEwAwBu@_Bo@uDuAeBo@aBo@k@SmCgAs@WmAc@aHoCaDqA{@]c@Q]QkAg@{FaCuDcBa@Q_@UgD{AsGuCcFcCsBaAkDeBqDkBaCmA_By@{@e@yAy@gAo@oFyC}KgGwBkAwCwAqBaAeEmBqCiAgA_@OGs@Y{@[cAa@}@]{EkBwAi@kCcAaAa@k@UGCGCo@Wa@OeAc@mCaA{@[u@YA?i@UeCaAyBy@_Bo@q@W_@OoAq@eBs@QKqAk@aD_Bw@_@qCuAoHcEsBmA_CyAgAq@}B{AcM}IcEyCqI}GgFkEwGaGaEyDcFaFaAeAgAiAqB}BiB}BsAiBmBoCgMqRoDsF_FqHiDaF{@qAo@{@_AkA_C{CmDiEcCwCgAoAq@w@yCaDaEgEgDgDsCwCkBkBcCaC_BcBuAwAcBkBiDyD{@cAgAqAqEyFeCcDwAmBoAeBoF_IqCkEs@kAuA}BOWgAgBiAkBgAiByAaCwA}BeBuCgCyDiD_F{B_DoK_NaJiLUWOS}C_E}BaD{BcDoDyFwA_CqBiDEGaAcBS_@Ua@y@{Au@qA_CcEcByCu@qAk@cA{AgCOWe@u@m@_A{@sAo@cAw@gAu@gAw@iAkBiCcAqAu@_Ay@cAi@o@g@m@}@cA}AiBsCyCgBiBkCeCw@s@cA}@cDqCoB_BmBwAiA{@wB{AqBuAgAu@kAw@gC_BeEeCeCwA{@g@g@WaB}@oAo@oAo@cBy@cBy@{@c@s@]q@Wg@WqAk@yBcA}CuAcAa@{@]_Bm@qDuAyGeCsC_A"
-              },
-              "start_location": {
-                "lat": 38.9233845,
-                "lng": -76.93080519999999
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "12.0 mi",
-                "value": 19233
-              },
-              "duration": {
-                "text": "12 mins",
-                "value": 723
-              },
-              "end_location": {
-                "lat": 39.27227389999999,
-                "lng": -76.63005249999999
-              },
-              "html_instructions":
-                "Continue onto <b>MD-295 N</b>/<b>Baltimore-Washington Pkwy</b>",
-              "polyline": {
-                "points":
-                  "_r{mFxgnsMiKqDaCu@iCw@g@QeA_@wBy@wG_CaFgBk@SkC_A}By@_A]mAi@s@]o@Y{@e@y@e@e@Ys@c@UOg@]MKgBqAa@[_@[cA}@_DcDiOoPgPuQcGwG}BiCu@w@mBuB_AgA}PiReBmBeAgAa@a@KKUUuAsAs@q@aDuC_A{@m@i@eA}@eA_A{AqAuAmAoAgA}@w@a@_@m@g@_@]eA}@aDoCsBiBiEuD}BqB_HcGkKcJcA{@USwAmAwAoAkBaBeB{AcA{@y@s@a@_@aAy@][WUUSeYqVeGmFOMMK_@]CCAAc@]oBcBqAkAg@c@mC}BkBaBgAaAgB}AyAoAyAoAWUo@k@cA}@i@e@_B}AY[u@w@u@}@]a@OOe@o@g@q@OSSYg@u@e@q@MWi@y@{@}Aw@yAq@uAm@sAWs@Wg@]_Ai@{AWs@]eAMc@KYKa@K[Ke@Oe@GQCI?AK_@eCcJs@cC[kAGSGQ[gAWcASq@Oi@Qo@YcAk@kBCMGYQo@GWOi@K[Ok@Ok@Qo@AIEOCKEMGSCKCGAGEMKYEO_@kAm@wA[u@Yo@e@}@i@cA]k@KOMSGKQYKOU[Y]UYsA{AuAqAcA{@u@k@uB{AMQIIMMIGA?CCCCGEMMe@c@]_@_@a@]e@q@y@GKECEEGIQWYa@U]IMCCe@q@{@qAe@u@cAyA_B_C}AyBwAyBeBeCu@oAy@qA{@sA{@{AiAwBU_@e@}@o@}Ac@qAg@uA_@uA_@sAa@eBCOACsAiFeCiKIi@aCuJqA_FqF_UsFaUa@cB_@aB[kAOo@YiA{AoG}CiMiByGcA_Do@aBSe@g@kA{@eBc@{@O]m@gASUU]i@y@U[_@i@SUIKSW}@iAiBmBWY_DoCiBqAqAs@_A_@iA[QEeASOCqBSqCW_AIeCQuCSqEa@yAMoAIi@E}BUu@GA?C?e@EA?A?IA{AKmAI}BQkCSy@GiDY{BQyAMsCWyCWyCUuCQuCQuCMuCKwCQyCYiAQiASmBg@k@S?Ag@Q{@a@u@a@y@g@]Us@e@m@g@s@m@e@e@o@s@W[m@s@u@cA_AoAaAsAa@o@SU_AuA{@mAw@iA_@k@W_@SYOSqJuN}@oA[c@eFkHy@{@kAcAu@a@_Ac@oAa@wAUuBQcF_@{CSe@C}CSmGg@QAw@GeBOo@EG?A?A?aBKq@Cw@AyCEeBCqCIQCK@W?E?aCKkAAuAIg@CWE[E[Go@OUI[Ic@Oy@a@o@_@u@k@OOCCEG][KKGGAAEEACA??ACCKKOSAACC[c@?AAAEEUYe@m@]_@CCAAACA?WYeL{N"
-              },
-              "start_location": {
-                "lat": 39.1403167,
-                "lng": -76.7553332
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "0.9 mi",
-                "value": 1475
-              },
-              "duration": {
-                "text": "2 mins",
-                "value": 148
-              },
-              "end_location": {
-                "lat": 39.2838355,
-                "lng": -76.6232572
-              },
-              "html_instructions": "Continue onto <b>Russell St</b>",
-              "polyline": {
-                "points":
-                  "ujunFxxurMEGCGUWMQk@w@_@i@MSwAkBuEqGoAcB_@e@w@{@{@{@ACAAcAy@MIUO[SYOOGWIOGGC_A]eCaAA?WKIC}@_@_C{@iCy@m@UkCcAOG_@MECQGQEWEA?OAOCA?c@G}@@aBDoFJwAD"
-              },
-              "start_location": {
-                "lat": 39.27227389999999,
-                "lng": -76.63005249999999
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "0.1 mi",
-                "value": 198
-              },
-              "duration": {
-                "text": "1 min",
-                "value": 30
-              },
-              "end_location": {
-                "lat": 39.2853415,
-                "lng": -76.62235889999999
-              },
-              "html_instructions": "Continue onto <b>Eislen St</b>",
-              "polyline": {
-                "points": "_swnFjntrMw@BU?I?GAWA]KMEMGIEIGKKWWIICGIOWi@Q["
-              },
-              "start_location": {
-                "lat": 39.2838355,
-                "lng": -76.6232572
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "0.4 mi",
-                "value": 564
-              },
-              "duration": {
-                "text": "2 mins",
-                "value": 124
-              },
-              "end_location": {
-                "lat": 39.2903511,
-                "lng": -76.6223641
-              },
-              "html_instructions": "Continue onto <b>S Paca St</b>",
-              "polyline": {
-                "points":
-                  "k|wnFvhtrMMOGEIGKEIEECa@IK?W?U?a@B{@?S@S?[@]@I@W@M@a@@aABw@BgBFiAB{@DeCFqAB"
-              },
-              "start_location": {
-                "lat": 39.2853415,
-                "lng": -76.62235889999999
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "390 ft",
-                "value": 119
-              },
-              "duration": {
-                "text": "1 min",
-                "value": 39
-              },
-              "end_location": {
-                "lat": 39.2902813,
-                "lng": -76.6237383
-              },
-              "html_instructions": "Turn <b>left</b> onto <b>W Fayette St</b>",
-              "maneuver": "turn-left",
-              "polyline": {
-                "points": "u{xnFvhtrMBpABx@DfC"
-              },
-              "start_location": {
-                "lat": 39.2903511,
-                "lng": -76.6223641
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "59 ft",
-                "value": 18
-              },
-              "duration": {
-                "text": "1 min",
-                "value": 8
-              },
-              "end_location": {
-                "lat": 39.2901193,
-                "lng": -76.62372909999999
-              },
-              "html_instructions": "Turn <b>left</b> onto <b>N Greene St</b>",
-              "maneuver": "turn-left",
-              "polyline": {
-                "points": "g{xnFjqtrM^A"
-              },
-              "start_location": {
-                "lat": 39.2902813,
-                "lng": -76.6237383
-              },
-              "travel_mode": "DRIVING"
-            },
-            {
-              "distance": {
-                "text": "315 ft",
-                "value": 96
-              },
-              "duration": {
-                "text": "1 min",
-                "value": 40
-              },
-              "end_location": {
-                "lat": 39.2894133,
-                "lng": -76.6239241
-              },
-              "html_instructions":
-                "Turn <b>right</b><div style=\"font-size:0.9em\">Destination will be on the right</div>",
-              "maneuver": "turn-right",
-              "polyline": {
-                "points": "gzxnFhqtrM?`@?@?@BB@@FBN?\\Az@CLAFA"
-              },
-              "start_location": {
-                "lat": 39.2901193,
-                "lng": -76.62372909999999
-              },
-              "travel_mode": "DRIVING"
+            "southwest" : {
+               "lat" : 37.53397,
+               "lng" : -77.51824999999999
             }
-          ],
-          "traffic_speed_entry": [],
-          "via_waypoint": []
-        }
-      ],
-      "overview_polyline": {
-        "points":
-          "mpnlFhpfuMmGzCkGtCo@OiHB?}D?gM?_R?_p@A{\\@qKbD?vI?{EcSkDcNiAmEg@sBj@aBvAmE`BeFbFsOpKq\\hAqCJEn@?t@?t@A?g@@{@}@sD_BmGyB_J_BuGYg@cBgHcBcHqFuTQo@kCoL{Ocp@wCuLSoCEoDKuW?eHGgOKaJHgHd@qRd@_WNiLAiCQcBkA{D{DcK_CwGa@{BSgDBcGpBoTtA}OTgEBcHQqEaAmJq@eEoBiKaCwGqCaFmDkEkJiJQWoFaE}GoEeR}L_EaDmBuB_CgDsCgGgDeLmCmIoBiEeEeGsBmBkDeCqJeEiC{AUO{DcDeCqCwDgEaAeAiDyCqBuAcB{@yCeAaCk@eDc@yCMcJRmILaDMcEk@wEsAuB}@eDmBqLeIqBeAyBaAkCm@mEm@uGW}DQoD_@{Bg@qEyAwD}AiG}DeGiEmFaDwDkBuH_DyBeAkDwBcCeByMsMyD_DkD{BeGsCgN{DyMqDkIyC{E{BsDyBoGsE_EwDcFyFs@aAyE{G}D{GgEqK_@oAcAcE{FyZw@mEaCoJyB{GeFuLmCyEeAyAoCsDmFgF}DiCaCqAcEaB}EgB}Ai@kGcBcGqAuQ{DaR{D{NcDkHoBuCw@qKeDsQgGi\\wLqYgL_P_H_UkKsQaJ}HiE}[eQwHoDyEiBcE_B}NwFcLmEoPoGgFaC}LaGkR}KaQyLuOwL_OmMeL{KeJkKaEyFwReZuNaTqNiQuMqNkPmPcMaN{MsPgDsEaKkOaFiIcIuMmFoIeH_KwWu\\{GaJkH}KqGuK_NcV_EuGyEgH}GeJiEeFqFcGsFoFoKcJaLeIaNsIkIuEgJsEwRyIgRgHiX_Ju_@aNqF_CoEiCsDkCeHyGueAgkAyEcFaIqHyPcOsWeU{fAu_A{a@m^eFoEyEwE}FuHyCaFoDwHwBwFcAeDeEiOwD}M}EqQi@gBiByEgC}EeCmDiDmDyBgB{CeCmBgB}CyDiGeJgPoVaEqH{C{ImLaf@_Um~@yFyUmDyLgDyHuBwDuB}CoBcCaCgCiGaFqCsA{Aa@uAWcGk@mPqAqIs@kE[e\\iC_RqAkHYqHk@sCe@yC{@cBu@aEeCwDoD{DcFwDoF_SwYaGoIeC_CuBeAgDw@{OiAuNeA_DUmEQgMUiHWwBWeCs@iBaAeA{@s@s@QScAoAeBuBcNcQeOoSwB}BcCgBaHmCcP_GcCo@sBIaNZ_ACcA_@w@u@w@}Ak@c@}@SmFH}JZaELqABBpAH`E^A?`@?BDDt@@pAG"
-      },
-      "summary": "Baltimore-Washington Pkwy and MD-295 N",
-      "warnings": [],
-      "waypoint_order": []
-    }
-  ],
-  "status": "OK"
+         },
+         "copyrights" : "Map data ©2017 Google",
+         "legs" : [
+            {
+               "arrival_time" : {
+                  "text" : "1:20am",
+                  "time_zone" : "America/New_York",
+                  "value" : 1513664400
+               },
+               "departure_time" : {
+                  "text" : "9:45pm",
+                  "time_zone" : "America/New_York",
+                  "value" : 1513651500
+               },
+               "distance" : {
+                  "text" : "145 mi",
+                  "value" : 232933
+               },
+               "duration" : {
+                  "text" : "3 hours 35 mins",
+                  "value" : 12900
+               },
+               "end_address" : "Richmond, VA, USA",
+               "end_location" : {
+                  "lat" : 37.53397,
+                  "lng" : -77.42949999999999
+               },
+               "start_address" : "Baltimore, MD, USA",
+               "start_location" : {
+                  "lat" : 39.270958,
+                  "lng" : -76.62723
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "35.3 mi",
+                        "value" : 56764
+                     },
+                     "duration" : {
+                        "text" : "1 hour 15 mins",
+                        "value" : 4500
+                     },
+                     "end_location" : {
+                        "lat" : 38.89758,
+                        "lng" : -77.00615999999999
+                     },
+                     "html_instructions" : "Bus towards Washington",
+                     "polyline" : {
+                        "points" : "obunFdgurM`xu@fplApcQ}oB"
+                     },
+                     "start_location" : {
+                        "lat" : 39.270958,
+                        "lng" : -76.62723
+                     },
+                     "transit_details" : {
+                        "arrival_stop" : {
+                           "location" : {
+                              "lat" : 38.89758,
+                              "lng" : -77.00615999999999
+                           },
+                           "name" : "Washington"
+                        },
+                        "arrival_time" : {
+                           "text" : "11:00pm",
+                           "time_zone" : "America/New_York",
+                           "value" : 1513656000
+                        },
+                        "departure_stop" : {
+                           "location" : {
+                              "lat" : 39.270958,
+                              "lng" : -76.62723
+                           },
+                           "name" : "Greyhound Baltimore"
+                        },
+                        "departure_time" : {
+                           "text" : "9:45pm",
+                           "time_zone" : "America/New_York",
+                           "value" : 1513651500
+                        },
+                        "headsign" : "Washington",
+                        "line" : {
+                           "agencies" : [
+                              {
+                                 "name" : "Greyhound Lines",
+                                 "phone" : "1 (800) 231-2222",
+                                 "url" : "https://www.greyhound.com/transit"
+                              }
+                           ],
+                           "color" : "#006064",
+                           "name" : "Detroit, MI - Washington, DC",
+                           "short_name" : "Greyhound",
+                           "text_color" : "#ffffff",
+                           "vehicle" : {
+                              "icon" : "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                              "name" : "Bus",
+                              "type" : "BUS"
+                           }
+                        },
+                        "num_stops" : 2
+                     },
+                     "travel_mode" : "TRANSIT"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "331 ft",
+                        "value" : 101
+                     },
+                     "duration" : {
+                        "text" : "2 mins",
+                        "value" : 101
+                     },
+                     "end_location" : {
+                        "lat" : 38.8984888,
+                        "lng" : -77.0061281
+                     },
+                     "html_instructions" : "Walk to Union Station",
+                     "polyline" : {
+                        "points" : "{dllFng_uMuDE"
+                     },
+                     "start_location" : {
+                        "lat" : 38.89758,
+                        "lng" : -77.00615999999999
+                     },
+                     "steps" : [
+                        {
+                           "distance" : {
+                              "text" : "331 ft",
+                              "value" : 101
+                           },
+                           "duration" : {
+                              "text" : "2 mins",
+                              "value" : 101
+                           },
+                           "end_location" : {
+                              "lat" : 38.8984888,
+                              "lng" : -77.0061281
+                           },
+                           "polyline" : {
+                              "points" : "{dllFng_uMuDE"
+                           },
+                           "start_location" : {
+                              "lat" : 38.89758,
+                              "lng" : -77.00615999999999
+                           },
+                           "travel_mode" : "WALKING"
+                        }
+                     ],
+                     "travel_mode" : "WALKING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "109 mi",
+                        "value" : 176068
+                     },
+                     "duration" : {
+                        "text" : "2 hours 10 mins",
+                        "value" : 7800
+                     },
+                     "end_location" : {
+                        "lat" : 37.53397,
+                        "lng" : -77.42949999999999
+                     },
+                     "html_instructions" : "Bus towards Atlanta, GA",
+                     "polyline" : {
+                        "points" : "qjllFhg_uMIAC?gHaBOF[@?jTBvADj\\RjC|@jGAtUhAAlA@nF?ZAfQ?lFDrB?dBCtA?@nAAp[Cp@BhNAzAAfWd@@tG?R@nM@LAt@?ZRzKA`F@Z@\\?NBTBj@H\\F@?RFJBlAl@lAt@nBpATPn@^LJHDNJ\\RVRjBlA@@dAr@JFHVd@z@Rh@Rp@TnAFz@@^Dj@FtAD~BH|@N~@^nAVt@Rd@\\p@X^HHBDLLLNNLrEfE|BzBf@b@fNzMB@nAlAlAdANN@??@@?TR@?xBlBNNv@l@lAr@LFlAp@f@TnAn@jBt@LFVJv@^z@h@lA`AXXLR`AlAZb@dB|C|A~CZz@Zv@Z|@b@~AF\\H^LfALrAJt@LlCB~@?t@@N?xDIxEC\\Ch@Q`CQ|AMp@Mx@A@Mp@?Bs@zDCF?BGVm@dDUpBGt@Cf@Ej@?lB@\\@|@BL?D@H@R@D?JBL?@Jz@DVNn@vD|MjArDv@`BZf@TZn@r@VZB@?@NNVP@Bh@`@v@d@^RZNl@RrAZfBRPDdDXn@DvE`@~A\\j@PTFh@PrBz@bAh@vAz@~@l@lF`DdCrApJ`GfFfD~@j@bEtCHD~F~DhHjFnL`J?@DBLJJJpFnEzHvGDFx@t@|@t@DDFDdGtFxCzCZXJLdAfAxCdDx@hABBh@r@v@lA~AxCNZxBjFbCnGj@dBhBhG~@xD~@vERjAx@fE?@nEnVTtA`Kjj@zAlHtBnJr@vC|@hD|ArF?@^pA?@FPb@|A@@?@FTpAvD`F~Mn@|AP^`BxDvD`Ih@`Ar@tAzCvFx@tAvDdGdCrDzRxXt@hA\\d@DDXb@Zh@Zd@@BZf@xCrFvAzCr@dB^bARn@Vp@`BrFL^DPpCfJBJxA|ENj@Rj@fHzUj@pBtIv\\Ph@b@zAtA`E\\|@rA|CpBfE~Sra@tClFnBhDlD|F`CtDtFdIzDjFjEpF`ArAhCzCrC~C|DdEx@t@|@~@j@h@|EbFfCnC|O~Q^d@Z\\|@hAr@x@PPPRXTZZfAx@^VlAr@`Af@dBr@zRxGvBz@zAf@d@Ph@PrBj@vBf@xBb@|Bf@B@r@HpD|@|@VhBb@h@N~@Rh@NhHvA`BX`@JrPpCvBZlIfA`AN~APt@JlGf@xAF`BJVB`CLxGTz_@~@jPZpGV|DTnFd@lFj@tEj@bAJ~@Lj@F`ANRBhBX~FfAjBb@zFxA`HvBtHnC`C~@vGtC|E`CfEzBz@h@XNTNh@Xt@d@b@ThDzBhD~BvIrGbNvKdGdF^XzMlLd@d@nDdDpGtGNPhDpDjJnKrAbBbFdGpClD|C`EfFfHrFdIhFlIf@|@pAvBnC~ErFjJtAtBfCpD`C~CbAnA`BjBhCjCfA`ApCxB~AdA`B`AjCpA`CbAlDnA~DnArEnA~Bj@fATf@LbGlAzFbAtCb@dGx@nsApO`BX~AZjBd@pBj@dBl@`A`@t@X~BhApAp@|@f@`BdA|AfAvAhA`BvAvBtB`AdAhArAdBxBn@t@p@|@pDnEl@x@xAvBxA`CJNh@`AhBpDlAnCv@nBbAnCxAtERr@n@fCtCdNzCtOT`AtA~Gn@lDDX^tBl@~Dt@|FRtBVxBXbDFf@F|@Fn@VjD|@xND|@@B?BdCha@Ft@FdAR|B`@vDT~Af@xCb@rB`@bBPn@FXHVHZl@lBJXJ\\hAvCFLDLJRHTRb@b@z@LXNVJT\\l@P\\x@pA|AvBrAbBnAxAt@t@tApAjB~Av@j@lAv@jAr@hBbAv^tPB?RJ@@@?~eAnf@^RhElB~DbBnHtChA`@hLxDjF|ApD`A|Bj@VHhX~G~HtB~IpC|Ah@RF@?dKvD`w@dZrB|@dB|@nAr@nAv@tA~@lBvAdBbBxApAnApAvB~BpRtTPNxElFNR~LpNxB`ChC~BlB|AdD|BxBpAhAl@nIhDnu@nU|Ah@`U`HPD|MfErBr@t@XhAd@hClAjB`AhAn@fBfAz@j@JF`BjApB|ApAhA@?VV`BvAr~@n`AvBvBj@h@h@j@dCvB~AnAt@f@n@d@bAn@jAp@`Af@dCjAd@PhAd@dBl@z@VziAf[x@R`HjBPF@?zBn@RDlA^zF|ARDtEpAb@JbGpBnChAlDhBx@f@nBrA`CjBt@n@~@z@`A`ArB|Bh~@lhAjJtLpG~IpZxa@BDbC~CjBvBhCjCt@p@`@Zt@n@n@f@|B`BdAn@hBbAtBfAz@\\pAj@xBv@tA`@`Cl@f^bIfBb@dE|@hFlAxSrEvIpBbFvAxAd@xCdA~D~AjElBnB`AdEzB~D`CtCjBbCbBnEjDtAjAliAzbArGpFnB|A~GfFlClBhCdBbHnEvN|Ix@h@z]lT|A|@nEpBlBr@xBr@hCn@tCl@hBVzAP~BRjBHhCFdA?rDEv@CtAIlMcA|CYtE]nCM|AExCC`A?hBBjDLbAFdCRjBRv@J|Cd@lFhApCt@hBl@tBt@vCjAx@^`Bx@hWrNnBjAtUpMhCrArCtApHhDfEfBhAb@~@`@`FjBpC`Aj]zKbEtA`@P`@N|Ar@zC~AjBfAh@\\p@d@pNnKbCdBD@pEtCnC|A~DtBrB`AjFxBfC~@jC|@xJvClg@xNtBh@fCt@dBj@x@Zb@N|DbBhCnAvAv@ZRt@b@xAbAJFbDdChA~@vClC|CbDpB`CxFtHlcBj~BrBjCtClDpDnDhA~@nBzAt@h@lBnAz@f@bB|@`CjAvu@n[pD`B`FhC`DjB|BvAzFbEtEtDhDzCtArAxCzCrC`D|i@pp@hAvA`DvDrGbIFFpPhS|@jAr@z@VV?@LPxF~GNRtA~AhGrGTR`@`@lBbBrAfAJJtDnC~@l@hCzADDdEzBnAl@`CdAbDpAzE~AtY`Jr@VvSvGtCt@zAZ|Cb@jAJ~@JV@`AFvBFxABdBAhBEzAIr@Gd@ChBStCa@\\GhAOt@IrCe@@?tRqChDc@hBM`CMfDE~A@dCHtBL`BNbBRrDn@lKjCjCr@dB`@|s@|Qd@J`fBzc@jGxA|GnAhAPjEh@zCXzF`@tERhDJ`EDfC?|@Af@?bEI`EQfF_@jFm@zEu@hB]fB_@fCm@xFyAjDiArDsAfEiB~CyAbDaBdB_AdC}An@_@~EeDzBcBrBaB`EkDtCqC~XaYbCyBhCoB|@m@tBqAl@]pAq@lB{@rEeBnCu@nBe@hB]tAU`AMd@E`DS|EUvDBvBF|AJbBNlBVL@f_@lFpCZpEZrBFbDD|B@fAAdACdEOb@CdDY|Ca@tCe@rBc@bP{DlB_@fEm@t@Ix@Ev@GtBIdAC`CA`A@rCHlDVfBRpCb@|ZlGxEx@hC\\b@D`CXdBNdEXnDNh[bAlBHn{@pC|CL`CFrAFtBFjFTjF^b@FN@`AJTD`ALP@JBJ@b@FzCf@RDPBnDr@l@N~@RnAZjFxAvLrDx@TdA\\lA\\lW|H|A^xDx@bC`@RB\\FnCXZDb@DzCPfEJxD?jEK|@E~BQ`CUdAIzC]nb@eEhBMzAI|AEbEE|B@j@@lDLdDTxANt@FbDd@pCf@pCn@`AVdD`AbA\\nTlIpAd@rDxAhd@~PjPpGfEzApChAxChAtDpAvBx@bFzAlCr@`E`AhDr@~F`AbFl@dGf@vEVtCL~EHf^G|CCfGA`IKj_@_A`HMbGOfBClOg@`Ti@dIOvAEhBMtDa@vEu@nG{ApA]xDoAhwBex@|@[~S_IDAbBq@rDqA``@wNzAi@tC}@vCs@fB_@jB[\\Ev@MjBW|@Il@Ij@Ej@G~@GvCMpFIhPCdKGhH@jCCrs@Oxp@k@nEAdRUjMI|BGL?dG]dCSlCW~Fw@tAU|QwDzDu@~D{@tOuCjPgD@?zOeDnOwCnDk@zKuAlAKzDWr@Cv@ElCIdCExh@QlNA~LBpDArACzCMpBOzHy@tAUxBa@n@KlCk@dD_AnAa@dDkAxD_B`CiAbDmBdF_Dr@_@vEmCnIgEnCqAfMsFjIgDjAc@h@QvSmItBw@dYaLtCoAh@SfHiD`B}@~A_A|E{CvCsBzBaBbEcD`LkIvJqHhFuDd@WdAq@^Y`C{A|CsBlAu@jD}BlC_BpA{@~a@kW`J{FFCrImFvB{AzAw@xDkBlAe@\\KvDqAbCo@|A]xBa@`D_@~BQjDOfBCbBBvJVj@BxWn@fIJbL\\bEF`FLpJNpADxFHxEAdCEbCIdCMlIs@xBYlBYp@Ip@KdFaAbDq@LEhNqCtGwAvAWx@QfHsA~AWpIiAxC]|Iy@~NcAzE_@p`@oC~BShb@mCbEOR?RAnB?vCBrBDnAD~CRxEd@dANzShDfBRf@DR@VBfDNvABtA?xAExAIZArAKj@GtBYl@Kt@OlBe@~@W\\M\\Kf@QbBq@pMyEj@UzBw@`A[n@QdDw@rAYfF{@l@G~@MrCY`COrAGH?tBGrEArCDnDNrCTjALrC^j@FxCh@|Cp@ZJh@LjEtAxBt@f@RZJvLtFfCnAfHzCzJtDbLtDnGlBhLvC|@R`@F`JhBxGlA`C^hKxAnCXlF`@dE^vAHzHh@r@BvAHjGR|KRp@?|@@nA?bJIpLY~EUpTkAhAIfH_@~AMzBMlEOlCGjCCz@?\\@p@?bEF|AD\\Bx@BbAFbAHvAHv@FlD\\pBT~Cb@rXbEdAJ^FfCZjGf@|JXfA?hA@hC?zDElDKN?rCOpAKbFg@tFu@pEu@fI{AJCrHqAlMcCJC`BWZIB?nGkAdBYlJcBf@KdAQTG`Ca@`B[rAUtc@kIlASrAWxHqAvVwEdTwD~Be@vFcAXGpGgA`ASrr@iMBAdBYn^yG|Dm@|Ek@nFc@~@El@EdCKpDKtCExA?`FDz@BdA@bCFvAFhTf@fBFlDH^BT?|ADv@@tITdDL~AHxEZ`Jr@hCVR@pEf@|ARpG~@`Dh@bANfEx@pATdHxA`E`ApAVtA\\~@PTFbEt@pCZhCPzBJV?fABzB?rAC|AGnCQl@GHCtC]dEw@nAYvCw@vFkBnJyCFCtCy@FCxEgAvCm@dEq@vEi@rAKxBMfIUdDAjDBlCF|EP~Fb@VDrDd@hBZD?f@JB@lCf@nQrDrEr@n@Ht@FjD\\~@FvBJrP`A`Hd@fCRRB|AL|YxCzIp@V@F?L@vCLbCF~@@zE?v@A^?`FMhCM~@InBMhBOvC]j@I~@KpCc@nCg@tDw@pCs@pCw@xBq@fA_@pDuAh@W|@]bBs@|As@DCv@]jJmEjCkAf@WrAk@~SuJXOZMf@WrCkAlAa@`Dw@|B_@vAORAVCtAGnC?jA@R@VBh@Bj@F`@Bn@HZFh@Hb@HpBd@RFRHh@NnAd@fBx@pAp@^Vf@ZrA~@`@Zh@f@d@`@r@r@p@t@n@v@TVnAhBlB|C~L~StBfDdBdCr@z@PPPRv@r@n@h@t@p@xAjA?@lAbAb@`@vPvNrBpB^b@nAfBt@tAf@hAL\\l@nBV`AnAtFRv@X|@`@dAf@hAp@nAXb@TZjBxBz@t@pAz@XNtAn@|HxC|Af@`Bl@hBt@tEbBxB|@pDrAxGhC~Ah@h@Nh@Jh@L|ATl@D\\D|CFvB?tLMlB?j@AxAI~AOn@KnEqA~Aq@|BuA\\[`@[j@i@j@m@x@aAt@aApAwBvHqN@Cv@wAfAiBn@aARWjF{HHIVc@h@w@n@kAXk@`KmYVm@v@{Al@}@zA}Az@o@RMr@_@p@Yr@U`@K^IVEPAXEv@C^?pAFnPfB|BNtADxCL|ENbA@hAC^C`AKf@K^KZKp@Wf@Uj@Yj@c@`@]h@g@~@mAlAwB\\u@?AjAqCxEsK|@eBn@aAPSv@w@jD}CxCeCnAwAhA}Az@uA~@cBbBiDTg@Tc@pBsEt@uBt@_DLq@XgBt@aIFe@RiA\\cBf@yBnAeFj@uBb@qAZy@j@oAfM}Vj@aAn@}@Za@j@m@TSt@i@ZShAi@|CaAjBi@xJ{C|@[nA[j@Ib@En@E~@C`A@zARl@NXJJB`@PRJXLf@\\VRl@h@xGhFXVH`@@@?@B@zBlB|@j@XHLBH@H?J@JAZ?XAb@?B@D@B?B@TLPLr@yAv@{AFF"
+                     },
+                     "start_location" : {
+                        "lat" : 38.8984888,
+                        "lng" : -77.0061281
+                     },
+                     "transit_details" : {
+                        "arrival_stop" : {
+                           "location" : {
+                              "lat" : 37.53397,
+                              "lng" : -77.42949999999999
+                           },
+                           "name" : "The Plaza at Main Street Station, Richmond, VA"
+                        },
+                        "arrival_time" : {
+                           "text" : "1:20am",
+                           "time_zone" : "America/New_York",
+                           "value" : 1513664400
+                        },
+                        "departure_stop" : {
+                           "location" : {
+                              "lat" : 38.8984888,
+                              "lng" : -77.0061281
+                           },
+                           "name" : "Union Station"
+                        },
+                        "departure_time" : {
+                           "text" : "11:10pm",
+                           "time_zone" : "America/New_York",
+                           "value" : 1513656600
+                        },
+                        "headsign" : "Atlanta, GA",
+                        "line" : {
+                           "agencies" : [
+                              {
+                                 "name" : "Megabus",
+                                 "url" : "http://us.megabus.com/default.aspx?utm_source=Google&utm_medium=Transit&utm_campaign=Google%2BTransit"
+                              }
+                           ],
+                           "color" : "#000066",
+                           "name" : "M37 DC - Richmond - Durham - Charlotte - Atlanta",
+                           "short_name" : "Megabus",
+                           "text_color" : "#ffc400",
+                           "vehicle" : {
+                              "icon" : "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+                              "name" : "Bus",
+                              "type" : "BUS"
+                           }
+                        },
+                        "num_stops" : 1
+                     },
+                     "travel_mode" : "TRANSIT"
+                  }
+               ],
+               "traffic_speed_entry" : [],
+               "via_waypoint" : []
+            }
+         ],
+         "overview_polyline" : {
+            "points" : "obunFdgurM`xu@fplApcQ}oB_EGwIwA\\zx@z@`^vC?`a@BxECtA?@nAEb]@dQb@hWhH@nPRvT@~ErAhIjFzG|GpA|O`DlIza@j`@~YbRxK`UjArOaA|V}ApIqAjRLrAxE`RtDxI~CzCtOlDrKvAvF~Bhj@j]b_@pX~\\|YhOrP`HnNxIxXpYl}AlJl_@bLl[j[zk@hXf`@nNv\\nQvl@vLnd@xHdRra@hv@~Vx]~[x]vZ|]|CbCpZhLfWfHdPxDhq@tKn}@nDjf@nBfQpBtb@rJ`f@lTxo@bf@ho@|n@fRxUlVx^z]fi@bMlK|OfHxg@dLvaB`SdK`D~TlNjTfW|Ol[jR|{@vEh_@rFb|@hEb[vHrSlL~OfItGpd@lTp}Axr@pcAfYtxA|i@jVjS~s@xw@xTfL`oA``@pUzHfLfGhNvKloAroAhRrIh|Adb@hO`EzRlIfJjHjoAb|Ajg@~q@lIpIvS~LjnAnYnXtH`UjKhT|NfxAvoAfmA~v@`QhGzMjBnNJxVkBx^[fMxA~QbF`dA`j@fcAv^v^pUjNzIfTpJteAf[zVtNpNrNpsBzqC`LtJnK`GlgAff@xVlRhfA~oAr]pb@zWpVf^pPvt@fUdKvAjSCxQaCj_@qEbORfW~Et|@~TtyBvi@xXxBfe@k@xSaD`VeHbc@mVjg@af@`MiJ`MqF~LoCfN}@pNf@tg@bHfRj@vJYlQeCn[sGlH[dO`@pi@~Jbw@dEtzAtFr_@pHnx@~T~WnAf}@uHt]`@|NdCz]dMdsArg@jTjGr[jEtp@f@rv@qAdiAwCnVqE`tCqeApx@yXpNiBbmB}@riBgC~nAmU|e@iJxU}BxxAk@~SmB|MyCpPwGtS{LvbAqb@lh@oTvPmKnm@}c@zdAgp@nPeK|MoF|NoCvNa@`uAzCjTFpUeBhj@sKxOuChi@eFryAcJzNb@b`@rF|QNbPiCb[aLt[_Fj]f@b[hHbSdJvi@tRjZ|Gt\\`F|r@jDp|@mCda@uAjSp@xo@rIzWbAbOQxo@aJ~}AmYnmAsT~w@yNzr@wKr\\_@vg@nAvl@|Cta@fGz`@|HbXBrKaBnYwIh_@_HrWa@bSbA`g@~Ix{AnLb\\]t\\uEbZ}Jnl@iXpFaCdMiCrLAlJ~AbN~GlJhKx[`g@|]xZlEjHbDdMdInOdZvMx^rMn_@XxLwB|G_EjSa\\rNqTjNc_@xEyE~GsBdh@~CdKmA`DqBtEcHbJmSdHkHnJqKnEyIjF{OjByO`EyPrPy]tIkIp[uIfJnAfMnKxFlD~B@~A{@~@sA"
+         },
+         "summary" : "",
+         "warnings" : [
+            "Walking directions are in beta.    Use caution – This route may be missing sidewalks or pedestrian paths."
+         ],
+         "waypoint_order" : []
+      }
+   ],
+   "status" : "OK"
 }

@@ -20,7 +20,8 @@ const setPropertyList = propertyList => {
   };
 };
 
-// TODO: Get data from remote server
+// TODO: Make a rails-wabpacker app and fetch data from remote server through a custom client.
+// Simulate fetching from API because client server cannot directly access third party APIs.
 export const fetchPropertyList = () => dispatch => {
   requestJson('data/properties.json', (error, response) => {
     if (!error) {
@@ -38,7 +39,8 @@ const setDirection = direction => {
   };
 };
 
-// TODO: Get data from remote server
+// TODO: Make a rails-wabpacker app and fetch data from remote server through a custom client.
+// Simulate fetching from API because client server cannot directly access third party APIs.
 export const fetchDirection = () => dispatch => {
   requestJson('data/direction.json', (error, response) => {
     if (!error) {
