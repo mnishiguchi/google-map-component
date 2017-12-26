@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Formik, Field, Form } from 'formik';
+import classNames from 'classnames';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
 import Yup from 'yup';
@@ -10,16 +12,12 @@ import {
   MdDirectionsWalk
 } from 'react-icons/lib/md';
 import FormErrorMessage from './FormErrorMessage';
+import { fetchDirection, clearDirection } from '../../../actions';
 
-// Example params:
-// origin: 75 9th Ave, New York, NY
-// destination: MetLife Stadium Dr East Rutherford, NJ 07073
-// mode: transit
-// arrival_time: 1391374800
-const DirectionsComponent = () => {
+const DirectionForm = ({ dispatch }) => {
   return (
     <Formik
-      displayName="DirectionsComponent"
+      displayName="DirectionForm"
       initialValues={{
         origin: '',
         destination: '',
@@ -31,12 +29,9 @@ const DirectionsComponent = () => {
         destination: Yup.string().required('Destination is required')
       })}
       onSubmit={(values, { setSubmitting, setFieldError }) => {
-        // TODO
-        // Simulate async request
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 500);
+        const direction = { ...values };
+        const callback = () => setSubmitting(false);
+        dispatch(fetchDirection(direction, callback));
       }}
       render={({
         values,
@@ -50,7 +45,7 @@ const DirectionsComponent = () => {
         return (
           <Form
             onKeyPress={event => event.which === 13 && event.preventDefault()}
-            style={{ padding: '5px' }}
+            style={{ padding: '1rem' }}
           >
             <div className="field">
               <div className="control">
@@ -58,11 +53,10 @@ const DirectionsComponent = () => {
                   type="text"
                   name="origin"
                   placeholder="Origin"
-                  className={
-                    errors.origin && touched.origin
-                      ? 'input is-danger'
-                      : 'input'
-                  }
+                  className={classNames([
+                    'input',
+                    { 'is-danger': errors.origin && touched.origin }
+                  ])}
                 />
               </div>
             </div>
@@ -72,11 +66,10 @@ const DirectionsComponent = () => {
                   type="text"
                   name="destination"
                   placeholder="Destination"
-                  className={
-                    errors.destination && touched.destination
-                      ? 'input is-danger'
-                      : 'input'
-                  }
+                  className={classNames([
+                    'input',
+                    { 'is-danger': errors.origin && touched.destination }
+                  ])}
                 />
               </div>
             </div>
@@ -85,11 +78,10 @@ const DirectionsComponent = () => {
               <p className="control">
                 <button
                   type="button"
-                  className={
-                    values.mode === 'transit'
-                      ? 'button is-info is-selected'
-                      : 'button'
-                  }
+                  className={classNames([
+                    'button',
+                    { 'is-info is-selected': values.mode === 'transit' }
+                  ])}
                   onClick={() => setFieldValue('mode', 'transit')}
                 >
                   <span className="icon is-small">
@@ -102,29 +94,27 @@ const DirectionsComponent = () => {
               <p className="control">
                 <button
                   type="button"
-                  className={
-                    values.mode === 'driving'
-                      ? 'button is-info is-selected'
-                      : 'button'
-                  }
+                  className={classNames([
+                    'button',
+                    { 'is-info is-selected': values.mode === 'driving' }
+                  ])}
                   onClick={() => setFieldValue('mode', 'driving')}
                 >
                   <span className="icon is-small">
                     <MdDirectionsCar />
                   </span>
-                  <span>Driving</span>
+                  <span>Drive</span>
                 </button>
               </p>
 
               <p className="control">
                 <button
                   type="button"
-                  className={
-                    values.mode === 'cycling'
-                      ? 'button is-info is-selected'
-                      : 'button'
-                  }
-                  onClick={() => setFieldValue('mode', 'cycling')}
+                  className={classNames([
+                    'button',
+                    { 'is-info is-selected': values.mode === 'bicycling' }
+                  ])}
+                  onClick={() => setFieldValue('mode', 'bicycling')}
                 >
                   <span className="icon is-small">
                     <MdDirectionsBike />
@@ -136,11 +126,10 @@ const DirectionsComponent = () => {
               <p className="control">
                 <button
                   type="button"
-                  className={
-                    values.mode === 'walking'
-                      ? 'button is-info is-selected'
-                      : 'button'
-                  }
+                  className={classNames([
+                    'button',
+                    { 'is-info is-selected': values.mode === 'walking' }
+                  ])}
                   onClick={() => setFieldValue('mode', 'walking')}
                 >
                   <span className="icon is-small">
@@ -152,8 +141,8 @@ const DirectionsComponent = () => {
             </div>
 
             <Datetime
-              open
-              input={false}
+              open={false}
+              input={true}
               inputProps={{ name: 'arrivalTime' }}
               value={values.arrivalTime}
               onChange={moment => setFieldValue('arrivalTime', moment.toDate())}
@@ -168,9 +157,13 @@ const DirectionsComponent = () => {
             <div>
               <button
                 type="button"
-                onClick={handleReset}
+                onClick={() => {
+                  handleReset();
+                  dispatch(clearDirection());
+                }}
                 disabled={!dirty || isSubmitting}
                 className="button"
+                style={{ width: '50%' }}
               >
                 Reset
               </button>
@@ -178,7 +171,11 @@ const DirectionsComponent = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="button is-primary is-outlined"
+                className={classNames([
+                  'button is-primary is-outlined',
+                  { 'is-loading': isSubmitting }
+                ])}
+                style={{ width: '50%' }}
               >
                 Submit
               </button>
@@ -190,4 +187,4 @@ const DirectionsComponent = () => {
   );
 };
 
-export default DirectionsComponent;
+export default connect(null)(DirectionForm);

@@ -8,8 +8,10 @@ import {
 } from 'react-google-maps';
 import { compose, withProps } from 'recompose';
 import MarkerComponent from './MarkerComponent';
+import DirectionDetails from './DirectionDetails';
 import UsStatePolygonComponent from './UsStatePolygonComponent';
 import decodeCoordinates from '../../../utils/decodeCoordinates';
+import { clearDirection } from '../../../actions';
 
 const googleMapURL =
   'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyA9CucPXf8WfL7K4HiMZzw5D8mXwrnX2XI';
@@ -31,18 +33,20 @@ const MapComponent = compose(
   withScriptjs,
   withGoogleMap
 )(props => {
-  const encodedCoordinates = props.direction
-    ? props.direction.routes[0].overview_polyline.points
-    : '';
+  const { direction } = props;
+  const encodedCoordinates =
+    direction.data && direction.data.length > 0
+      ? direction.data[0].overviewPolyline.points
+      : '';
   const polylinePath = decodeCoordinates(encodedCoordinates);
 
   return (
     <GoogleMap {...defaultMapProps}>
       {props.isMarkerShown && (
-        <React.Fragment>
-          <UsStatePolygonComponent usStateName={'district of columbia'} />
-          <UsStatePolygonComponent usStateName={'maryland'} />
-          <UsStatePolygonComponent usStateName={'virginia'} />
+        <div style={{ position: 'relative' }}>
+          <UsStatePolygonComponent usStateName="district of columbia" />
+          <UsStatePolygonComponent usStateName="maryland" />
+          <UsStatePolygonComponent usStateName="virginia" />
 
           {polylinePath && (
             <Polyline
@@ -67,16 +71,27 @@ const MapComponent = compose(
               {...place}
             />
           ))}
-        </React.Fragment>
+
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0
+            }}
+          >
+            <DirectionDetails
+              direction={direction}
+              onClose={() => props.dispatch(clearDirection())}
+            />
+          </div>
+        </div>
       )}
     </GoogleMap>
   );
 });
 
-const mapStateToProps = state => {
-  return {
-    direction: state.map.direction
-  };
-};
+const mapStateToProps = state => ({
+  direction: state.map.direction
+});
 
 export default connect(mapStateToProps)(MapComponent);

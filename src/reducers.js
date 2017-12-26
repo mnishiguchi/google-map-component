@@ -8,7 +8,7 @@ import {
 } from './constants';
 
 const mapReducer = (
-  state = { selectedItemId: null, direction: null },
+  state = { selectedItemId: null, direction: {} },
   action
 ) => {
   switch (action.type) {
@@ -20,7 +20,7 @@ const mapReducer = (
     case SET_DIRECTION:
       return {
         ...state,
-        direction: action.payload.direction
+        direction: action.payload.direction || {}
       };
     default:
       return state;

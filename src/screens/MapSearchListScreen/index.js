@@ -3,19 +3,14 @@ import { connect } from 'react-redux';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import MapComponent from './components/MapComponent';
 import SearchList from './components/SearchList';
-import DirectionsComponent from './components/DirectionsComponent';
-import { fetchPropertyList, fetchDirection } from '../../actions';
+import DirectionForm from './components/DirectionForm';
+import { fetchPropertyList } from '../../actions';
 
 class MapSearchListScreen extends React.PureComponent {
   componentDidMount() {
     // Set dataArray if not already.
     if (this.props.dataArray.length < 1) {
       this.props.dispatch(fetchPropertyList());
-    }
-
-    // TODO: Create a direction form component and move code there.
-    if (!this.props.direction) {
-      this.props.dispatch(fetchDirection());
     }
   }
 
@@ -45,7 +40,7 @@ class MapSearchListScreen extends React.PureComponent {
               </div>
             </TabPanel>
             <TabPanel>
-              <DirectionsComponent />
+              <DirectionForm />
             </TabPanel>
           </Tabs>
 
