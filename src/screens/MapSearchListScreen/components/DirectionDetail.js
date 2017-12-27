@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DirectionDetails = ({ direction, onClose }) => {
+const DirectionDetail = ({ direction, onClose }) => {
   const directionLegs = direction.data ? direction.data[0].legs : [];
   const directionMode = direction.mode ? direction.mode : '';
 
@@ -47,4 +47,4 @@ const DirectionDetails = ({ direction, onClose }) => {
   );
 };
 
-export default DirectionDetails;
+export default DirectionDetail;

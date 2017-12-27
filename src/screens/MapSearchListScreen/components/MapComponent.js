@@ -8,8 +8,8 @@ import {
 } from 'react-google-maps';
 import { compose, withProps } from 'recompose';
 import MarkerComponent from './MarkerComponent';
-import DirectionDetails from './DirectionDetails';
-import UsStatePolygonComponent from './UsStatePolygonComponent';
+import DirectionDetail from './DirectionDetail';
+import PolygonComponent from './PolygonComponent';
 import decodeCoordinates from '../../../utils/decodeCoordinates';
 import { clearDirection } from '../../../actions';
 
@@ -33,20 +33,22 @@ const MapComponent = compose(
   withScriptjs,
   withGoogleMap
 )(props => {
-  const { direction } = props;
-  const encodedCoordinates =
+  const { direction, polygon } = props;
+  const encodedDirectionCoordinates =
     direction.data && direction.data.length > 0
       ? direction.data[0].overviewPolyline.points
       : '';
-  const polylinePath = decodeCoordinates(encodedCoordinates);
+  const polylinePath = decodeCoordinates(encodedDirectionCoordinates);
+
+  const encodedPolygonCoordinates = polygon.polygon || ''
+  const polygonPath = decodeCoordinates(encodedPolygonCoordinates);
 
   return (
     <GoogleMap {...defaultMapProps}>
       {props.isMarkerShown && (
         <div style={{ position: 'relative' }}>
-          <UsStatePolygonComponent usStateName="district of columbia" />
-          <UsStatePolygonComponent usStateName="maryland" />
-          <UsStatePolygonComponent usStateName="virginia" />
+
+          {polygonPath && <PolygonComponent path={polygonPath} />}
 
           {polylinePath && (
             <Polyline
@@ -79,7 +81,7 @@ const MapComponent = compose(
               left: 0
             }}
           >
-            <DirectionDetails
+            <DirectionDetail
               direction={direction}
               onClose={() => props.dispatch(clearDirection())}
             />
@@ -91,7 +93,8 @@ const MapComponent = compose(
 });
 
 const mapStateToProps = state => ({
-  direction: state.map.direction
+  direction: state.map.direction,
+  polygon: state.map.polygon
 });
 
 export default connect(mapStateToProps)(MapComponent);

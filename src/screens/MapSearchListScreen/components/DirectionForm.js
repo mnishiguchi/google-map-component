@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Formik, Field, Form } from 'formik';
+import { Formik, Form } from 'formik';
 import classNames from 'classnames';
 import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';

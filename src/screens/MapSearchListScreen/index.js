@@ -4,7 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import MapComponent from './components/MapComponent';
 import SearchList from './components/SearchList';
 import DirectionForm from './components/DirectionForm';
-import LocationAutocompleteInput from './components/LocationAutocompleteInput';
+import PolygonForm from './components/PolygonForm';
 import { fetchPropertyList } from '../../actions';
 
 class MapSearchListScreen extends React.PureComponent {
@@ -29,30 +29,28 @@ class MapSearchListScreen extends React.PureComponent {
           <Tabs>
             <TabList className="tabs" style={{ marginBottom: '1px', borderBottom: '1px solid #ccc' }}>
               <Tab>
-                <a>Autocomplete</a>
+                <a>List</a>
               </Tab>
               <Tab>
-                <a>List</a>
+                <a>Polygons</a>
               </Tab>
               <Tab>
                 <a>Directions</a>
               </Tab>
             </TabList>
-            <TabPanel>
-              <div style={{ padding: '1.5rem' }}>
-                <LocationAutocompleteInput />
-              </div>
-            </TabPanel>
+
             <TabPanel>
               <div style={{ height: '90vh' }}>
                 <SearchList dataArray={dataArray} />
               </div>
             </TabPanel>
             <TabPanel>
+              <PolygonForm />
+            </TabPanel>
+            <TabPanel>
               <DirectionForm />
             </TabPanel>
           </Tabs>
-
         </div>
       </div>
     );

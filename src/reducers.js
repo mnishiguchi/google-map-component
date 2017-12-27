@@ -4,11 +4,12 @@ import { routerReducer } from 'react-router-redux';
 import {
   SELECT_SEARCH_LIST_ITEM,
   SET_PROPERTY_LIST,
-  SET_DIRECTION
+  SET_DIRECTION,
+  SET_POLYGON
 } from './constants';
 
 const mapReducer = (
-  state = { selectedItemId: null, direction: {} },
+  state = { selectedItemId: null, direction: {}, polygon: {} },
   action
 ) => {
   switch (action.type) {
@@ -21,6 +22,11 @@ const mapReducer = (
       return {
         ...state,
         direction: action.payload.direction || {}
+      };
+    case SET_POLYGON:
+      return {
+        ...state,
+        polygon: action.payload.polygon || {}
       };
     default:
       return state;
