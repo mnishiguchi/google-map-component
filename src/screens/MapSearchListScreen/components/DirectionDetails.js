@@ -6,6 +6,8 @@ const DirectionDetails = ({ direction, onClose }) => {
 
   if (!directionLegs || !directionLegs[0]) return <div />;
 
+  const { startAddress, endAddress } = directionLegs[0]
+
   return (
     <div
       style={{
@@ -20,7 +22,7 @@ const DirectionDetails = ({ direction, onClose }) => {
     >
       <button
         type="button"
-        onClick={() => onClose()}
+        onClick={onClose}
         style={{ position: 'absolute', top: '5px', right: '5px' }}
       >
         X
@@ -38,6 +40,9 @@ const DirectionDetails = ({ direction, onClose }) => {
           </li>
         ))}
       </ol>
+      <a target="_blank" href={`https://www.google.com/maps/dir/${startAddress}/${endAddress}`} className="button">
+        Google Directions
+      </a>
     </div>
   );
 };

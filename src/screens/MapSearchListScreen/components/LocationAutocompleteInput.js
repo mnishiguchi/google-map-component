@@ -24,79 +24,93 @@ class LocationAutocompleteInput extends React.PureComponent {
   }
 
   render() {
+    const {
+      onSelect, inputClassName, inputPlaceholder, inputName, inputStyle, showClearButton,
+    } = this.props;
     return (
       <Downshift
+        onSelect={onSelect}
         render={({
           selectedItem,
           getInputProps,
           getItemProps,
           highlightedIndex,
           isOpen,
-          clearSelection
-        }) => {
-          return (
-            <div style={{ padding: '1.5rem' }}>
-              <div className="field has-addons">
-                <p className="control">
-                  <input
-                    ref={node => this.inputNode = node}
-                    className="input"
-                    placeholder="Place name"
-                    {...getInputProps({
-                      onChange: event => {
-                        const value = event.target.value;
-                        if (!value) return;
+          clearSelection,
+        }) => (
+          <div className="LocationAutocompleteInput" style={{ position: 'relative' }}>
+            <div className="field has-addons">
+              <p className="control" style={{ width: '100%' }}>
+                <input
+                  ref={node => (this.inputNode = node)}
+                  name={inputName}
+                  className={inputClassName || 'input'}
+                  style={inputStyle}
+                  placeholder={inputPlaceholder || 'Place name'}
+                  {...getInputProps({
+                    onChange: (event) => {
+                      const value = event.target.value;
+                      if (!value) return;
 
-                        debounce(
-                          fetch(`${baseEndpoint}${value}`)
-                            .then(response => {
-                              if (!response.ok) {
-                                return Promise.reject(response.text().then(msg => new Error(msg)))
-                              }
+                      debounce(
+                        fetch(`${baseEndpoint}${value}`)
+                          .then((response) => {
+                            if (!response.ok) {
+                              return Promise.reject(response.text().then(msg => new Error(msg)));
+                            }
 
-                              return response.json()
-                            }).then(json => {
-                              if (!Array.isArray(json)) return;
+                            return response.json();
+                          })
+                          .then((json) => {
+                            if (!Array.isArray(json)) return;
 
-                              const items = [...json];
-                              this.setState({ items });
-                            }),
-                          400
-                        );
-                      }
-                    })}
-                  />
-                </p>
-                <p className="control">
-                  <a className="button" onClick={clearSelection}>
-                    x
-                  </a>
-                </p>
-              </div>
-
-              {isOpen && (
-                <div>
-                  {this.state.items.map((item, index) => (
-                    <div
-                      key={index}
-                      {...getItemProps({
-                        item,
-                        style: {
-                          padding: '8px 10px',
-                          backgroundColor:
-                            highlightedIndex === index ? '#ccc' : '#fff',
-                          fontWeight: selectedItem === item ? 'bold' : 'normal'
-                        }
-                      })}
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              )}
+                            const items = [...json];
+                            this.setState({ items });
+                          }),
+                        400,
+                      );
+                    },
+                  })}
+                />
+              </p>
+              <p className="control">
+                <a
+                  className="button LocationAutocompleteInput__clearButton"
+                  onClick={clearSelection}
+                >
+                  x
+                </a>
+              </p>
             </div>
-          );
-        }}
+
+            {isOpen && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '40px',
+                  left: 0,
+                  zIndex: 9,
+                }}
+              >
+                {this.state.items.map((item, index) => (
+                  <div
+                    key={index}
+                    {...getItemProps({
+                      item,
+                      style: {
+                        padding: '8px 10px',
+                        backgroundColor: highlightedIndex === index ? '#ccc' : '#fff',
+                        fontWeight: selectedItem === item ? 'bold' : 'normal',
+                      },
+                    })}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
       />
     );
   }

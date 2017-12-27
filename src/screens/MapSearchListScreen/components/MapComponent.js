@@ -18,7 +18,7 @@ const googleMapURL =
 
 const defaultMapProps = {
   defaultCenter: { lat: 38.8977, lng: -77.0365 },
-  defaultZoom: 7
+  defaultZoom: 10
 };
 
 // Configure the map here.

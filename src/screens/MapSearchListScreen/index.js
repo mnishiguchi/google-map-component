@@ -39,7 +39,9 @@ class MapSearchListScreen extends React.PureComponent {
               </Tab>
             </TabList>
             <TabPanel>
-              <LocationAutocompleteInput />
+              <div style={{ padding: '1.5rem' }}>
+                <LocationAutocompleteInput />
+              </div>
             </TabPanel>
             <TabPanel>
               <div style={{ height: '90vh' }}>
