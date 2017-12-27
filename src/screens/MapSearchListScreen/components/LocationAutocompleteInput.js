@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Downshift from 'downshift';
 
 function debounce(fn, time) {
@@ -32,32 +31,49 @@ class LocationAutocompleteInput extends React.PureComponent {
           getInputProps,
           getItemProps,
           highlightedIndex,
-          isOpen
+          isOpen,
+          clearSelection
         }) => {
           return (
             <div style={{ padding: '1.5rem' }}>
-              <input
-                className="input"
-                {...getInputProps({
-                  onChange: event => {
-                    const value = event.target.value;
-                    if (!value) return;
+              <div className="field has-addons">
+                <p className="control">
+                  <input
+                    ref={node => this.inputNode = node}
+                    className="input"
+                    placeholder="Place name"
+                    {...getInputProps({
+                      onChange: event => {
+                        const value = event.target.value;
+                        if (!value) return;
 
-                    debounce(
-                      axios
-                        .get(`${baseEndpoint}${value}`)
-                        .then(response => {
-                          const items = [...response.data];
-                          this.setState({ items });
-                        })
-                        .catch(error => {
-                          console.log(error);
-                        }),
-                      400
-                    );
-                  }
-                })}
-              />
+                        debounce(
+                          fetch(`${baseEndpoint}${value}`)
+                            .then(response => {
+                              if (!response.ok) {
+                                return Promise.reject(response.text().then(msg => new Error(msg)))
+                              }
+
+                              return response.json()
+                            }).then(json => {
+                              if (!Array.isArray(json)) return;
+
+                              const items = [...json];
+                              this.setState({ items });
+                            }),
+                          400
+                        );
+                      }
+                    })}
+                  />
+                </p>
+                <p className="control">
+                  <a className="button" onClick={clearSelection}>
+                    x
+                  </a>
+                </p>
+              </div>
+
               {isOpen && (
                 <div>
                   {this.state.items.map((item, index) => (
