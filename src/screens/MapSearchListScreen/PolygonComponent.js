@@ -10,9 +10,7 @@ const PolygonComponent = ({ path }) => {
     fillOpacity: 0.35
   };
 
-  return (
-    <Polygon paths={path} options={polygonOptions} />
-  );
+  return <Polygon paths={path} options={polygonOptions} />;
 };
 
 export default PolygonComponent;

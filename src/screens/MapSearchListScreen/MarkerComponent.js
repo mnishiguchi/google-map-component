@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Marker, InfoWindow } from 'react-google-maps';
 import { compose, withStateHandlers, withHandlers } from 'recompose';
-import { selectSearchListItem } from '../../../actions';
-import priceSymbolConverter from '../../../utils/priceSymbolConverter';
+import { selectSearchListItem } from '../../actions';
+import priceSymbolConverter from '../../utils/priceSymbolConverter';
 
 // Store pairs of yelpUid to marker object.
 const yelpUidMarkerMap = {};

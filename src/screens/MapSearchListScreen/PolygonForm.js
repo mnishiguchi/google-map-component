@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Formik, Form } from 'formik';
 import classNames from 'classnames';
 import Yup from 'yup';
-import { fetchPolygon, clearPolygon } from '../../../actions';
+import { fetchPolygon, clearPolygon } from '../../actions';
 import FormErrorMessage from './FormErrorMessage';
 import LocationAutocompleteInput from './LocationAutocompleteInput';
 
@@ -11,12 +11,12 @@ const PolygonForm = ({ dispatch }) => (
   <Formik
     displayName="PolygonForm"
     initialValues={{
-      place: '',
+      place: ''
     }}
     validationSchema={Yup.object().shape({
       place: Yup.string()
         .nullable()
-        .required('Place is required'),
+        .required('Place is required')
     })}
     onSubmit={(values, { setSubmitting, setFieldError }) => {
       const polygon = { ...values };
@@ -25,7 +25,13 @@ const PolygonForm = ({ dispatch }) => (
       dispatch(fetchPolygon(polygon, callback));
     }}
     render={({
-     values, touched, errors, dirty, setFieldValue, isSubmitting, handleReset,
+      values,
+      touched,
+      errors,
+      dirty,
+      setFieldValue,
+      isSubmitting,
+      handleReset
     }) => (
       <Form
         onKeyPress={event => event.which === 13 && event.preventDefault()}
@@ -37,9 +43,9 @@ const PolygonForm = ({ dispatch }) => (
               inputName="place"
               inputPlaceholder="Place"
               inputClassName={classNames([
-                    'input',
-                    { 'is-danger': errors.place && touched.place },
-                  ])}
+                'input',
+                { 'is-danger': errors.place && touched.place }
+              ])}
               onSelect={selectedItem => setFieldValue('place', selectedItem)}
             />
           </div>
@@ -55,30 +61,32 @@ const PolygonForm = ({ dispatch }) => (
           <button
             type="button"
             onClick={() => {
-                  handleReset();
-                  dispatch(clearPolygon());
-                  [].forEach.call(
-                    document.querySelectorAll('.LocationAutocompleteInput__clearButton'),
-                    buttonNode => buttonNode.click(),
-                  );
-                }}
+              handleReset();
+              dispatch(clearPolygon());
+              [].forEach.call(
+                document.querySelectorAll(
+                  '.LocationAutocompleteInput__clearButton'
+                ),
+                buttonNode => buttonNode.click()
+              );
+            }}
             disabled={!dirty || isSubmitting}
             className="button"
             style={{ width: '50%' }}
           >
-                Reset
+            Reset
           </button>
 
           <button
             type="submit"
             disabled={isSubmitting}
             className={classNames([
-                  'button is-primary is-outlined',
-                  { 'is-loading': isSubmitting },
-                ])}
+              'button is-primary is-outlined',
+              { 'is-loading': isSubmitting }
+            ])}
             style={{ width: '50%' }}
           >
-                Submit
+            Submit
           </button>
         </div>
       </Form>

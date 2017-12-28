@@ -9,9 +9,9 @@ import {
   MdDirectionsCar,
   MdDirectionsRailway,
   MdDirectionsBike,
-  MdDirectionsWalk,
+  MdDirectionsWalk
 } from 'react-icons/lib/md';
-import { fetchDirection, clearDirection } from '../../../actions';
+import { fetchDirection, clearDirection } from '../../actions';
 import FormErrorMessage from './FormErrorMessage';
 import LocationAutocompleteInput from './LocationAutocompleteInput';
 
@@ -22,7 +22,7 @@ const DirectionForm = ({ dispatch }) => (
       origin: '',
       destination: '',
       mode: 'transit',
-      arrivalTime: '',
+      arrivalTime: ''
     }}
     validationSchema={Yup.object().shape({
       origin: Yup.string()
@@ -30,7 +30,7 @@ const DirectionForm = ({ dispatch }) => (
         .required('Origin is required'),
       destination: Yup.string()
         .nullable()
-        .required('Destination is required'),
+        .required('Destination is required')
     })}
     onSubmit={(values, { setSubmitting, setFieldError }) => {
       const direction = { ...values };
@@ -38,7 +38,13 @@ const DirectionForm = ({ dispatch }) => (
       dispatch(fetchDirection(direction, callback));
     }}
     render={({
-     values, touched, errors, dirty, setFieldValue, isSubmitting, handleReset,
+      values,
+      touched,
+      errors,
+      dirty,
+      setFieldValue,
+      isSubmitting,
+      handleReset
     }) => (
       <Form
         onKeyPress={event => event.which === 13 && event.preventDefault()}
@@ -50,9 +56,9 @@ const DirectionForm = ({ dispatch }) => (
               inputName="origin"
               inputPlaceholder="Origin"
               inputClassName={classNames([
-                    'input',
-                    { 'is-danger': errors.origin && touched.origin },
-                  ])}
+                'input',
+                { 'is-danger': errors.origin && touched.origin }
+              ])}
               onSelect={selectedItem => setFieldValue('origin', selectedItem)}
             />
           </div>
@@ -63,10 +69,12 @@ const DirectionForm = ({ dispatch }) => (
               inputName="destination"
               inputPlaceholder="Destination"
               inputClassName={classNames([
-                    'input',
-                    { 'is-danger': errors.origin && touched.destination },
-                  ])}
-              onSelect={selectedItem => setFieldValue('destination', selectedItem)}
+                'input',
+                { 'is-danger': errors.origin && touched.destination }
+              ])}
+              onSelect={selectedItem =>
+                setFieldValue('destination', selectedItem)
+              }
             />
           </div>
         </div>
@@ -76,9 +84,9 @@ const DirectionForm = ({ dispatch }) => (
             <button
               type="button"
               className={classNames([
-                    'button',
-                    { 'is-info is-selected': values.mode === 'transit' },
-                  ])}
+                'button',
+                { 'is-info is-selected': values.mode === 'transit' }
+              ])}
               onClick={() => setFieldValue('mode', 'transit')}
             >
               <span className="icon is-small">
@@ -92,9 +100,9 @@ const DirectionForm = ({ dispatch }) => (
             <button
               type="button"
               className={classNames([
-                    'button',
-                    { 'is-info is-selected': values.mode === 'driving' },
-                  ])}
+                'button',
+                { 'is-info is-selected': values.mode === 'driving' }
+              ])}
               onClick={() => setFieldValue('mode', 'driving')}
             >
               <span className="icon is-small">
@@ -108,9 +116,9 @@ const DirectionForm = ({ dispatch }) => (
             <button
               type="button"
               className={classNames([
-                    'button',
-                    { 'is-info is-selected': values.mode === 'bicycling' },
-                  ])}
+                'button',
+                { 'is-info is-selected': values.mode === 'bicycling' }
+              ])}
               onClick={() => setFieldValue('mode', 'bicycling')}
             >
               <span className="icon is-small">
@@ -124,9 +132,9 @@ const DirectionForm = ({ dispatch }) => (
             <button
               type="button"
               className={classNames([
-                    'button',
-                    { 'is-info is-selected': values.mode === 'walking' },
-                  ])}
+                'button',
+                { 'is-info is-selected': values.mode === 'walking' }
+              ])}
               onClick={() => setFieldValue('mode', 'walking')}
             >
               <span className="icon is-small">
@@ -149,36 +157,38 @@ const DirectionForm = ({ dispatch }) => (
           <div style={{ margin: '1rem 0' }}>
             <FormErrorMessage errors={errors} touched={touched} />
           </div>
-            }
+        }
 
         <div>
           <button
             type="button"
             onClick={() => {
-                  handleReset();
-                  dispatch(clearDirection());
-                  [].forEach.call(
-                    document.querySelectorAll('.LocationAutocompleteInput__clearButton'),
-                    buttonNode => buttonNode.click(),
-                  );
-                }}
+              handleReset();
+              dispatch(clearDirection());
+              [].forEach.call(
+                document.querySelectorAll(
+                  '.LocationAutocompleteInput__clearButton'
+                ),
+                buttonNode => buttonNode.click()
+              );
+            }}
             disabled={!dirty || isSubmitting}
             className="button"
             style={{ width: '50%' }}
           >
-                Reset
+            Reset
           </button>
 
           <button
             type="submit"
             disabled={isSubmitting}
             className={classNames([
-                  'button is-primary is-outlined',
-                  { 'is-loading': isSubmitting },
-                ])}
+              'button is-primary is-outlined',
+              { 'is-loading': isSubmitting }
+            ])}
             style={{ width: '50%' }}
           >
-                Submit
+            Submit
           </button>
         </div>
       </Form>

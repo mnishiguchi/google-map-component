@@ -6,7 +6,7 @@ const DirectionDetail = ({ direction, onClose }) => {
 
   if (!directionLegs || !directionLegs[0]) return <div />;
 
-  const { startAddress, endAddress } = directionLegs[0]
+  const { startAddress, endAddress } = directionLegs[0];
 
   return (
     <div
@@ -17,7 +17,7 @@ const DirectionDetail = ({ direction, onClose }) => {
         height: '300px',
         color: 'white',
         overflow: 'auto',
-        padding: '1.5rem',
+        padding: '1.5rem'
       }}
     >
       <button
@@ -28,9 +28,12 @@ const DirectionDetail = ({ direction, onClose }) => {
         X
       </button>
       <h4 className="title is-4" style={{ color: 'white' }}>
-        {directionLegs[0].startAddress} -> {directionLegs[0].endAddress} ({directionMode})
+        {directionLegs[0].startAddress} -> {directionLegs[0].endAddress} ({
+          directionMode
+        })
         <div className="subtitle" style={{ color: 'white' }}>
-          Duration: {directionLegs[0].duration.text}, Distance: {directionLegs[0].distance.text}
+          Duration: {directionLegs[0].duration.text}, Distance:{' '}
+          {directionLegs[0].distance.text}
         </div>
       </h4>
       <ol>
@@ -40,7 +43,11 @@ const DirectionDetail = ({ direction, onClose }) => {
           </li>
         ))}
       </ol>
-      <a target="_blank" href={`https://www.google.com/maps/dir/${startAddress}/${endAddress}`} className="button">
+      <a
+        target="_blank"
+        href={`https://www.google.com/maps/dir/${startAddress}/${endAddress}`}
+        className="button"
+      >
         Google Directions
       </a>
     </div>

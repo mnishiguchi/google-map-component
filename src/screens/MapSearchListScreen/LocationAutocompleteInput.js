@@ -17,6 +17,7 @@ function debounce(fn, time) {
 
 const baseEndpoint = 'https://geo-apartments.herokuapp.com/v1/autocomplete?q=';
 
+// https://github.com/paypal/downshift/blob/master/stories/examples/axios.js
 class LocationAutocompleteInput extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -25,7 +26,11 @@ class LocationAutocompleteInput extends React.PureComponent {
 
   render() {
     const {
-      onSelect, inputClassName, inputPlaceholder, inputName, inputStyle, showClearButton,
+      onSelect,
+      inputClassName,
+      inputPlaceholder,
+      inputName,
+      inputStyle
     } = this.props;
     return (
       <Downshift
@@ -36,9 +41,12 @@ class LocationAutocompleteInput extends React.PureComponent {
           getItemProps,
           highlightedIndex,
           isOpen,
-          clearSelection,
+          clearSelection
         }) => (
-          <div className="LocationAutocompleteInput" style={{ position: 'relative' }}>
+          <div
+            className="LocationAutocompleteInput"
+            style={{ position: 'relative' }}
+          >
             <div className="field has-addons">
               <p className="control" style={{ width: '100%' }}>
                 <input
@@ -48,28 +56,28 @@ class LocationAutocompleteInput extends React.PureComponent {
                   style={inputStyle}
                   placeholder={inputPlaceholder || 'Place name'}
                   {...getInputProps({
-                    onChange: (event) => {
+                    onChange: event => {
                       const value = event.target.value;
                       if (!value) return;
 
                       debounce(
                         fetch(`${baseEndpoint}${value}`)
-                          .then((response) => {
+                          .then(response => {
                             if (!response.ok) {
-                              return Promise.reject(response.text().then(msg => new Error(msg)));
+                              throw Error(response.statusText);
                             }
 
                             return response.json();
                           })
-                          .then((json) => {
+                          .then(json => {
                             if (!Array.isArray(json)) return;
 
                             const items = [...json];
                             this.setState({ items });
                           }),
-                        400,
+                        400
                       );
-                    },
+                    }
                   })}
                 />
               </p>
@@ -89,7 +97,7 @@ class LocationAutocompleteInput extends React.PureComponent {
                   position: 'absolute',
                   top: '40px',
                   left: 0,
-                  zIndex: 9,
+                  zIndex: 9
                 }}
               >
                 {this.state.items.map((item, index) => (
@@ -99,9 +107,11 @@ class LocationAutocompleteInput extends React.PureComponent {
                       item,
                       style: {
                         padding: '8px 10px',
-                        backgroundColor: highlightedIndex === index ? '#ccc' : '#fff',
-                        fontWeight: selectedItem === item ? 'bold' : 'normal',
-                      },
+                        width: '368px',
+                        backgroundColor:
+                          highlightedIndex === index ? '#ccc' : '#fff',
+                        fontWeight: selectedItem === item ? 'bold' : 'normal'
+                      }
                     })}
                   >
                     {item}

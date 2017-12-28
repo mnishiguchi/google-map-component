@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { selectSearchListItem } from '../../../actions';
-import priceSymbolConverter from '../../../utils/priceSymbolConverter';
+import { selectSearchListItem } from '../../actions';
+import priceSymbolConverter from '../../utils/priceSymbolConverter';
 
 const SearchListItem = ({
   yelpUid,

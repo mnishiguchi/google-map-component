@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import MapComponent from './components/MapComponent';
-import SearchList from './components/SearchList';
-import DirectionForm from './components/DirectionForm';
-import PolygonForm from './components/PolygonForm';
+import MapComponent from './MapComponent';
+import SearchList from './SearchList';
+import DirectionForm from './DirectionForm';
+import PolygonForm from './PolygonForm';
 import { fetchPropertyList } from '../../actions';
 
 class MapSearchListScreen extends React.PureComponent {
@@ -27,7 +27,10 @@ class MapSearchListScreen extends React.PureComponent {
 
         <div style={{ width: '400px', height: '90vh', overflowY: 'hidden' }}>
           <Tabs>
-            <TabList className="tabs" style={{ marginBottom: '1px', borderBottom: '1px solid #ccc' }}>
+            <TabList
+              className="tabs"
+              style={{ marginBottom: '1px', borderBottom: '1px solid #ccc' }}
+            >
               <Tab>
                 <a>List</a>
               </Tab>
@@ -58,7 +61,7 @@ class MapSearchListScreen extends React.PureComponent {
 }
 
 const mapStateToProps = state => ({
-  dataArray: state.property.list || [],
+  dataArray: state.property.list || []
 });
 
 export default connect(mapStateToProps)(MapSearchListScreen);

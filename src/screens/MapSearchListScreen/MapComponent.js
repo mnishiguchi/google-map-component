@@ -10,8 +10,8 @@ import { compose, withProps } from 'recompose';
 import MarkerComponent from './MarkerComponent';
 import DirectionDetail from './DirectionDetail';
 import PolygonComponent from './PolygonComponent';
-import decodeCoordinates from '../../../utils/decodeCoordinates';
-import { clearDirection } from '../../../actions';
+import decodeCoordinates from '../../utils/decodeCoordinates';
+import { clearDirection } from '../../actions';
 
 const googleMapURL =
   'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyA9CucPXf8WfL7K4HiMZzw5D8mXwrnX2XI';
@@ -34,46 +34,22 @@ const MapComponent = compose(
   withGoogleMap
 )(props => {
   const { direction, polygon } = props;
-  const encodedDirectionCoordinates =
-    direction.data && direction.data.length > 0
-      ? direction.data[0].overviewPolyline.points
-      : '';
-  const polylinePath = decodeCoordinates(encodedDirectionCoordinates);
+  const isValidDirection = direction.data && direction.data.length > 0;
+  const encodedDirectionCoordinates = isValidDirection
+    ? direction.data[0].overviewPolyline.points
+    : '';
+  const directionPath = decodeCoordinates(encodedDirectionCoordinates);
 
-  const encodedPolygonCoordinates = polygon.polygon || ''
+  const isValidPolygon = polygon.polygon && polygon.polygon.length > 0;
+  const encodedPolygonCoordinates = isValidPolygon ? polygon.polygon : '';
   const polygonPath = decodeCoordinates(encodedPolygonCoordinates);
 
   return (
     <GoogleMap {...defaultMapProps}>
-      {props.isMarkerShown && (
-        <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative' }}>
+        {isValidPolygon && <PolygonComponent path={polygonPath} />}
 
-          {polygonPath && <PolygonComponent path={polygonPath} />}
-
-          {polylinePath && (
-            <Polyline
-              path={polylinePath}
-              options={{
-                path: {},
-                geodesic: true,
-                strokeColor: '#FF0000',
-                strokeOpacity: 1.0,
-                strokeWeight: 2
-              }}
-            />
-          )}
-
-          {props.dataArray.map(place => (
-            <MarkerComponent
-              key={place.yelpUid}
-              position={{
-                lat: Number(place.latitude),
-                lng: Number(place.longitude)
-              }}
-              {...place}
-            />
-          ))}
-
+        {isValidDirection && (
           <div
             style={{
               position: 'absolute',
@@ -86,8 +62,36 @@ const MapComponent = compose(
               onClose={() => props.dispatch(clearDirection())}
             />
           </div>
-        </div>
-      )}
+        )}
+
+        {props.isMarkerShown && (
+          <div>
+            {directionPath && (
+              <Polyline
+                path={directionPath}
+                options={{
+                  path: {},
+                  geodesic: true,
+                  strokeColor: '#FF0000',
+                  strokeOpacity: 1.0,
+                  strokeWeight: 2
+                }}
+              />
+            )}
+
+            {props.dataArray.map(place => (
+              <MarkerComponent
+                key={place.yelpUid}
+                position={{
+                  lat: Number(place.latitude),
+                  lng: Number(place.longitude)
+                }}
+                {...place}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </GoogleMap>
   );
 });
